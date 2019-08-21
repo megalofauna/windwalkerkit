@@ -1,6 +1,6 @@
 ---
 layout: home
-title: A simple starter kit for Eleventy
+title: A simple starter kit for WindWalker
 postsHeading: Latest posts
 archiveButtonText: See all posts
 socialImage: ''
