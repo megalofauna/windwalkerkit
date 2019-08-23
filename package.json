@@ -42,7 +42,7 @@
     "serve": "cross-env ELEVENTY_ENV=development npx eleventy --serve",
     "production": "npm run tailwind:production && npm run sass:process && npm run cms:precompile && npm run cms:bundle && npx eleventy",
     "tailwind": "postcss src/css/site.css --output src/_includes/assets/css/site.css --map",
-    "tailwind:production": "NODE_ENV=production postcss src/css/tailwind.css --output src/_includes/assets/css/tailwind.css"
+    "tailwind:production": "NODE_ENV=production postcss src/css/site.css --output src/_includes/assets/css/site.css"
   },
   "repository": {
     "type": "git",
