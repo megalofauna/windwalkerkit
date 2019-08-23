@@ -221,6 +221,22 @@ module.exports = {
     },
     fontFamily: {
       sans: [
+        'Inter Regular',
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        '"Noto Sans"',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+        '"Noto Color Emoji"',
+      ],
+      title: [
+        'Inter Bold',
         '-apple-system',
         'BlinkMacSystemFont',
         '"Segoe UI"',
@@ -304,7 +320,9 @@ module.exports = {
       disc: 'disc',
       decimal: 'decimal',
     },
-    margin: (theme, { negative }) => ({
+    margin: (theme, {
+      negative
+    }) => ({
       auto: 'auto',
       ...theme('spacing'),
       ...negative(theme('spacing')),

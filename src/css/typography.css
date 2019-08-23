@@ -1,0 +1,69 @@
+/* Inter Bold - Full */
+@font-face {
+  font-family: 'Inter Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Inter Bold'), local('Inter-Bold'),
+    url('/fonts/Inter-Bold.woff2') format('woff2'),
+    url('/fonts/Inter-Bold.woff') format('woff');
+}
+
+/* Inter Regular - Full */
+@font-face {
+  font-family: 'Inter Regular';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Inter Regular'), local('Inter-Regular'),
+    url('/fonts/Inter-Regular.woff2') format('woff2'),
+    url('/fonts/Inter-Regular.woff') format('woff');
+}
+
+body {
+  @apply font-sans text-base leading-tight;
+}
+
+h1,
+h2,
+h3 {
+  @apply font-title leading-tight;
+}
+
+h1 {
+  @apply text-4xl;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-2xl;
+}
+
+@screen md {
+  h1 {
+    @apply text-5xl leading-none;
+  }
+
+  h2 {
+    @apply text-4xl;
+  }
+
+  h3 {
+    @apply text-3xl;
+  }
+}
+
+@screen lg {
+  h1 {
+    @apply text-6xl leading-none;
+  }
+
+  h2 {
+    @apply text-5xl leading-tight;
+  }
+
+  h3 {
+    @apply text-4xl leading-tight;
+  }
+}

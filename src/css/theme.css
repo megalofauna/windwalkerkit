@@ -1,0 +1,31 @@
+:root {}
+
+@include dark-mode {
+  --color-bg: theme('colors.red.500');
+  --color-bg-glare: theme('colors.red.500');
+  --color-text: theme('colors.red.500');
+  --color-selection-text: theme('colors.red.200');
+  --color-selection-bg: theme('colors.red.700');
+  --color-stroke: theme('colors.red.500');
+  /* --color-theme-primary: #{lighten(get-color('primary'), 50%)}; */
+  /* --color-theme-primary-glare: #{lighten(get-color('primary-glare'), 50%)}; */
+  --color-action-bg: var(--color-theme-primary-glare);
+  --color-action-text: theme('colors.red.500');
+  --color-theme-highlight: theme('colors.red.500');
+  --color-theme-highlight-block: theme('colors.red.500');
+  --color-theme-feature-text: theme('colors.red.500');
+}
+
+
+body {
+  background-color: var(--color-bg);
+}
+
+main {
+  overflow: hidden;
+}
+
+::selection {
+  color: var(--color-selection-text);
+  background-color: var(--color-selection-bg);
+}

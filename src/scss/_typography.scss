@@ -1,49 +1,59 @@
-/* lora-700 - latin */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Lora Bold'), local('Lora-Bold'),
-    url('/fonts/lora-v13-latin-700.woff2') format('woff2'),
-    url('/fonts/lora-v13-latin-700.woff') format('woff');
-}
+// /* Inter Bold - Full */
+// @font-face {
+//   font-family: 'Inter Bold';
+//   font-style: normal;
+//   font-weight: 700;
+//   src: local('Inter Bold'), local('Inter-Bold'),
+//     url('/fonts/Inter-Bold.woff2') format('woff2'),
+//     url('/fonts/Inter-Bold.woff') format('woff');
+// }
 
-body {
-  // Strip the unit off the size ratio to generate a line height
-  $line-height: get-size(600);
-  line-height: $line-height / ($line-height * 0 + 1);
+// /* Inter Regular - Full */
+// @font-face {
+//   font-family: 'Inter Regular';
+//   font-style: normal;
+//   font-weight: 700;
+//   src: local('Inter Regular'), local('Inter-Regular'),
+//     url('/fonts/Inter-Regular.woff2') format('woff2'),
+//     url('/fonts/Inter-Regular.woff') format('woff');
+// }
 
-  @include apply-utility('font', 'base');
-}
+// body {
+//   // Strip the unit off the size ratio to generate a line height
+//   $line-height: get-size(600);
+//   line-height: $line-height / ($line-height * 0 + 1);
 
-h1,
-h2,
-h3 {
-  @include apply-utility('font', 'serif');
-}
+//   @include apply-utility('font', 'base');
+// }
 
-h1 {
-  font-size: get-size(700);
-}
+// h1,
+// h2,
+// h3 {
+//   @include apply-utility('font', 'serif');
+// }
 
-h2 {
-  font-size: get-size(600);
-}
+// h1 {
+//   font-size: get-size(700);
+// }
 
-h3 {
-  font-size: get-size(500);
-}
+// h2 {
+//   font-size: get-size(600);
+// }
 
-@include media-query('md') {
-  h1 {
-    font-size: get-size(900);
-  }
+// h3 {
+//   font-size: get-size(500);
+// }
 
-  h2 {
-    font-size: get-size(800);
-  }
+// @include media-query('md') {
+//   h1 {
+//     font-size: get-size(900);
+//   }
 
-  h3 {
-    font-size: get-size(700);
-  }
-}
+//   h2 {
+//     font-size: get-size(800);
+//   }
+
+//   h3 {
+//     font-size: get-size(700);
+//   }
+// }

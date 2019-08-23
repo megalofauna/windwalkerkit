@@ -1,4 +1,4 @@
-const VERSION = '2fb4-156c-5c3e';
+const VERSION = 'a08b-acfe-6931';
 const CACHE_KEYS = {
   PRE_CACHE: `precache-${VERSION}`,
   RUNTIME: `runtime-${VERSION}`
@@ -13,7 +13,7 @@ const EXCLUDED_URLS = [
 ];
 
 // URLS that we want to be cached when the worker is installed
-const PRE_CACHE_URLS = ['/', '/fonts/lora-v13-latin-700.woff2'];
+const PRE_CACHE_URLS = ['/', '/fonts/Inter-Bold.woff2', '/fonts/Inter-Regular.woff2'];
 
 // You might want to bypass a certain host
 const IGNORED_HOSTS = ['localhost', 'unpkg.com', ];
