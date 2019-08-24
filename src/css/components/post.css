@@ -14,6 +14,7 @@
 
 .post__body {
 
+
   /* remove top and bottom margin from all elements in post__body */
   * {
     @apply my-0;
@@ -24,6 +25,17 @@
     @apply mt-6;
   }
 
+  h2,
+  h3 {
+    @apply mt-8;
+  }
+
+  h2+*,
+  h3+* {
+    @apply mt-2;
+  }
+
+
   p {
     @apply text-base leading-normal;
   }
@@ -33,9 +45,15 @@
       @apply mt-8;
     }
 
+    h2,
+    h3 {
+      @apply mt-12;
+    }
+
     p {
       @apply text-lg;
     }
+
   }
 
   @screen lg {
@@ -43,10 +61,21 @@
       @apply mt-10;
     }
 
+    h2,
+    h3 {
+      @apply mt-16;
+    }
+
+    h2+*,
+    h3+* {
+      @apply mt-3;
+    }
+
     p {
       @apply text-xl leading-relaxed;
     }
   }
+
 
   h2 a,
   h3 a {

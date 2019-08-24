@@ -729,15 +729,15 @@ h3 {
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: 2rem
 }
 
 h2 {
-  font-size: 1.875rem;
+  font-size: 1.375rem;
 }
 
 h3 {
-  font-size: 1.375rem;
+  font-size: 1.25rem;
 }
 
 @media (min-width: 768px) {
@@ -946,6 +946,16 @@ pre[class*='language-'] {
     margin-top: 1.5rem;
   }
 
+.post__body h2,
+  .post__body h3 {
+    margin-top: 2rem;
+  }
+
+.post__body h2+*,
+  .post__body h3+* {
+    margin-top: 0.5rem;
+  }
+
 .post__body p {
     font-size: 1rem;
     line-height: 1.5;
@@ -956,6 +966,11 @@ pre[class*='language-'] {
       margin-top: 2rem;
     }
 
+    .post__body h2,
+    .post__body h3 {
+      margin-top: 3rem;
+    }
+
     .post__body p {
       font-size: 1.25rem;
     }
@@ -964,6 +979,16 @@ pre[class*='language-'] {
 @media (min-width: 1024px) {
     .post__body *+* {
       margin-top: 2.5rem;
+    }
+
+    .post__body h2,
+    .post__body h3 {
+      margin-top: 4rem;
+    }
+
+    .post__body h2+*,
+    .post__body h3+* {
+      margin-top: 0.75rem;
     }
 
     .post__body p {
