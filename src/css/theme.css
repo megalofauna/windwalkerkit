@@ -1,19 +1,19 @@
 :root {}
 
 @include dark-mode {
-  --color-bg: theme('colors.red.500');
-  --color-bg-glare: theme('colors.red.500');
-  --color-text: theme('colors.red.500');
-  --color-selection-text: theme('colors.red.200');
-  --color-selection-bg: theme('colors.red.700');
-  --color-stroke: theme('colors.red.500');
+  --color-bg: theme('colors.neutral.800');
+  --color-bg-glare: theme('colors.neutral.700');
+  --color-text: theme('colors.white');
+  --color-selection-text: theme('colors.white');
+  --color-selection-bg: theme('colors.primary.600');
+  --color-stroke: theme('colors.primary.600');
   /* --color-theme-primary: #{lighten(get-color('primary'), 50%)}; */
   /* --color-theme-primary-glare: #{lighten(get-color('primary-glare'), 50%)}; */
   --color-action-bg: var(--color-theme-primary-glare);
   --color-action-text: theme('colors.red.500');
   --color-theme-highlight: theme('colors.red.500');
-  --color-theme-highlight-block: theme('colors.red.500');
-  --color-theme-feature-text: theme('colors.red.500');
+  --color-theme-highlight-block: theme('colors.neutral.800');
+  --color-theme-feature-text: theme('colors.white');
 }
 
 

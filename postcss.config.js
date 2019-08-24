@@ -5,14 +5,16 @@ const
   nested = require('postcss-nested'),
   tailwind = require('tailwindcss'),
   purgecss = require('@fullhuman/postcss-purgecss'),
-  cssnano = require('cssnano')
+  cssnano = require('cssnano'),
+  cssmath = require('math-calc');
 
 module.exports = {
   plugins: [
     cssimport,
-    advancedvars,
-    nested,
     tailwind,
+    nested,
+    advancedvars,
+    cssmath,
     ...process.env.NODE_ENV === 'production' ? [
       purgecss({
         content: ['src/_includes/**/*.njk'],

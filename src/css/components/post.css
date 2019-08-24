@@ -1,0 +1,168 @@
+/* Style post__body content here for two main reasons:
+  1. To account for the fact that some content will be wrapped with element tags 
+     dynamically by the front-end, and, thus, may not appear in the layout files that 
+     purgcess audits for active elements and classes
+  2. To leverage the "*" selector to apply global styles
+*/
+
+/* The following is a special purgecss-specific comment for internal stylesheet whitelisting 
+   Details here: https://www.purgecss.com/whitelisting
+   👇
+*/
+
+/* purgecss start ignore */
+
+.post__body {
+
+  /* remove top and bottom margin from all elements in post__body */
+  * {
+    @apply my-0;
+  }
+
+  /* add back bottom margin to all elements in post__body */
+  *+* {
+    @apply mt-6;
+  }
+
+  p {
+    @apply text-base leading-normal;
+  }
+
+  @screen md {
+    *+* {
+      @apply mt-8;
+    }
+
+    p {
+      @apply text-lg;
+    }
+  }
+
+  @screen lg {
+    *+* {
+      @apply mt-10;
+    }
+
+    p {
+      @apply text-xl leading-relaxed;
+    }
+  }
+
+  h2 a,
+  h3 a {
+    @apply inline-block h-6 w-6 m-0 ml-3 text-primary-500;
+
+    svg {
+      @apply m-0 w-full h-full fill-current;
+    }
+  }
+
+  code {
+    font-size: 1em;
+    color: var(--color-theme-primary);
+    font-weight: 600;
+    margin-left: 0.01ch;
+    margin-right: 0.01ch;
+  }
+
+  pre>code {
+    background: black;
+    margin-right: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* blockquote {
+      border-left: 0.4rem solid var(--color-theme-primary-glare);
+      margin-left: 0;
+      padding-left: get-size(500);
+      font-style: italic;
+      font-size: get-size(600);
+
+      p {
+        opacity: 0.85;
+        padding: get-size(500) 0;
+      }
+    } */
+
+  /* ol:not([class]),
+    ul:not([class]) {
+      margin-left: get-size(800);
+
+      li+li {
+        margin-top: get-size(300);
+      }
+    } */
+
+  figure,
+  figure+*,
+  pre>code,
+  .video-player,
+  .video-player+*,
+  video {
+    /* --flow-space: #{get-size('max')}; */
+  }
+
+  figure,
+  pre>code,
+  .video-player,
+  video {
+    width: 100vw;
+    max-width: 64rem;
+    margin-left: 50%;
+    /*changing this value to 47% removes the horizontal scrollbar once the viewport is < 930px */
+    transform: translateX(-50%);
+    /* changing this value to 49% allows for the suggestion above to also eliminate the horizontal scroll. */
+    position: relative;
+  }
+
+  figure img,
+  pre>code,
+  .video-player {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  figure img {
+    position: relative;
+    z-index: 1;
+  }
+
+  figcaption {
+    font-size: 0.8em;
+    font-style: italic;
+    max-width: 100%;
+    margin: 0.5rem auto 0 auto;
+    /* padding: 0 get-size(500); */
+  }
+
+  pre>code {
+    display: block;
+    /* background: var(--color-dark); */
+    background-color: black;
+    /* padding: get-size(700);
+      font-size: get-size(500); */
+  }
+}
+
+&__footer {
+  background: var(--color-theme-highlight);
+
+  h2 {
+    flex-shrink: 0;
+    /* margin-right: get-size('base'); */
+    color: var(--color-text);
+  }
+
+
+  h2 a {
+    @apply invisible;
+  }
+
+  /* a {
+      background: var(--color-bg);
+      padding: 0.4rem 0.6rem;
+    } */
+}
+
+/* purgecss end ignore */

@@ -6,8 +6,7 @@ module.exports = {
     screens: {
       sm: '640px',
       md: '768px',
-      lg: '1024px',
-      xl: '1280px',
+      lg: '1024px'
     },
     colors: {
       transparent: 'transparent',
@@ -125,6 +124,26 @@ module.exports = {
         800: '#97266d',
         900: '#702459',
       },
+      primary: {
+        100: '#FFB8d2',
+        200: '#FF8CBA',
+        300: '#F364A2',
+        400: '#E8368F',
+        500: '#BC0A6F',
+        600: '#A30664',
+        700: '#870557',
+        800: '#620042',
+      },
+      neutral: {
+        100: '#E4E7EB',
+        200: '#CBD2D9',
+        300: '#9AA5B1',
+        400: '#7B8794',
+        500: '#52606D',
+        600: '#3E4C59',
+        700: '#323F4B',
+        800: '#1F2933',
+      }
     },
     spacing: {
       px: '1px',
@@ -192,7 +211,10 @@ module.exports = {
       outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
       none: 'none',
     },
-    container: {},
+    container: {
+      center: true,
+      padding: '1.5rem'
+    },
     cursor: {
       auto: 'auto',
       default: 'default',
@@ -270,10 +292,10 @@ module.exports = {
       xs: '0.75rem',
       sm: '0.875rem',
       base: '1rem',
-      lg: '1.125rem',
-      xl: '1.25rem',
-      '2xl': '1.5rem',
-      '3xl': '1.875rem',
+      lg: '1.25rem',
+      xl: '1.375rem',
+      '2xl': '1.875rem',
+      '3xl': '2rem',
       '4xl': '2.25rem',
       '5xl': '3rem',
       '6xl': '4rem',
