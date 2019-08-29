@@ -1,0 +1,7 @@
+.tag {
+  /* @apply */
+}
+
+.tag:hover {
+  /* @apply text-white; */
+}

@@ -6,12 +6,14 @@ const
   tailwind = require('tailwindcss'),
   purgecss = require('@fullhuman/postcss-purgecss'),
   cssnano = require('cssnano'),
-  cssmath = require('math-calc');
+  extend = require('postcss-extend')
+cssmath = require('math-calc');
 
 module.exports = {
   plugins: [
     cssimport,
     tailwind,
+    extend,
     nested,
     advancedvars,
     cssmath,

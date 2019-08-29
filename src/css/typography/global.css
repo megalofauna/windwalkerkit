@@ -1,0 +1,112 @@
+/* Inter Bold - Full */
+@font-face {
+  font-family: 'Inter Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Inter Bold'), local('Inter-Bold'),
+    url('/fonts/Inter-Bold.woff2') format('woff2'),
+    url('/fonts/Inter-Bold.woff') format('woff');
+}
+
+/* Inter Regular - Full */
+@font-face {
+  font-family: 'Inter Regular';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Inter Regular'), local('Inter-Regular'),
+    url('/fonts/Inter-Regular.woff2') format('woff2'),
+    url('/fonts/Inter-Regular.woff') format('woff');
+}
+
+h1,
+h3,
+h4 {
+  @apply font-title leading-none;
+}
+
+h1 {
+  @apply text-3xl
+}
+
+h2 {
+  @apply text-2xl;
+}
+
+h3 {
+  @apply text-lg;
+}
+
+h4 {
+  @apply text-sm uppercase tracking-wider;
+}
+
+/* a:not([class]) {
+  @apply underline cursor-pointer rounded-sm;
+  padding: theme('spacing.micro') theme('spacing.micro') * 1.5;
+  color: var(--color-link-text);
+  background-color: var(--color-link-bg);
+  text-decoration-skip-ink: auto;
+
+  &:hover {
+    @apply no-underline;
+    color: var(--color-link-text-hover);
+    background-color: var(--color-link-bg-hover);
+  }
+} */
+
+@screen sm {
+  h1 {
+    @apply text-4xl leading-none;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  h4 {
+    @apply text-base;
+  }
+
+}
+
+/* @screen md {
+  h1 {
+    @apply text-4xl leading-none;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+
+  h4 {
+    @apply text-base;
+  }
+
+} */
+
+@screen lg {
+  h1 {
+    @apply text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl leading-tight;
+  }
+
+  h4 {
+    @apply text-lg;
+  }
+
+}

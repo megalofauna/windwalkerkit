@@ -1,0 +1,22 @@
+/**
+ * FULL BLEED MIXIN
+ * Extend this (via `@extend full-bleed`) into elements you want to have the full bleed treatment;
+ * assign max-width property with Tailwind (e.g., in CSS: `@apply max-w-3xl` /
+ * in markup: `max-w-3xl`) if you'd like to constrain the bleed to a maximum 
+ * width. If you don't assign a max-width, the element will bleed to the 
+ * left and right edges of the viewport.
+ * 
+ * @author Andy Bell
+ *
+ * Documentation 👇
+ * https://andy-bell.design/wrote/creating-a-full-bleed-css-utility/
+ */
+
+@define-placeholder full-bleed {
+  position: relative;
+  width: 100vw;
+  /*changing this value to 47% removes the horizontal scrollbar once the viewport is < 930px */
+  margin-left: 50%;
+  /* changing this value to 49% allows for the suggestion above to also eliminate the horizontal scroll. */
+  transform: translateX(-50%);
+}

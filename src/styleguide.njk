@@ -22,7 +22,7 @@ permalink: /styleguide/
     }
 
     .props dt {
-      font-weight: 600;  
+      font-weight: 600;
     }
 
     .props dd + dt {
@@ -53,15 +53,25 @@ permalink: /styleguide/
               <h3 class="font-base text-500">{{ color.key }}</h3>
               <dl class="props">
                 <dt>Value</dt>
-                <dd><code>{{ color.value }}</code></dd>
+                <dd>
+                  <code>{{ color.value }}</code>
+                </dd>
                 <dt>Sass function</dt>
-                <dd><code>get-color('{{ color.key }}')</code></dd>
+                <dd>
+                  <code>get-color('{{ color.key }}')</code>
+                </dd>
                 <dt>Custom Property</dt>
-                <dd><code>var(--color-{{ color.key }})</code></dd>
+                <dd>
+                  <code>var(--color-{{ color.key }})</code>
+                </dd>
                 <dt>Text util class</dt>
-                <dd><code>color-{{ color.key }}</code></dd>
+                <dd>
+                  <code>color-{{ color.key }}</code>
+                </dd>
                 <dt>Background util class</dt>
-                <dd><code>bg-{{ color.key }}</code></dd>
+                <dd>
+                  <code>bg-{{ color.key }}</code>
+                </dd>
               </dl>
             </li>
           {% endfor %}
@@ -80,33 +90,34 @@ permalink: /styleguide/
         <h2>Text sizes</h2>
         <p>Text sizes are available as standard classes or media query prefixed, such as <code>lg:text-500</code>.</p>
         {% for size in styleguide.sizes() %}
-          <p class="text-{{ size.key }}" style="--flow-space: 1.5rem">{{ size.value }} - <code>text-{{ size.key }}</code></p>
+          <p class="text-{{ size.key }}" style="--flow-space: 1.5rem">{{ size.value }} - <code>text-{{ size.key }}</code>
+          </p>
         {% endfor %}
         <h2>Spacing</h2>
         <p>There’s size ratio utilities that give you margin (<code>gap-top, gap-bottom</code>) and padding (<code>pad-top, pad-left, pad-bottom</code>).
         <h3>Margin</h3>
-        <p class="visually-hidden">Margin token classes that you can copy</p>
-        <div>
+          <p class="visually-hidden">Margin token classes that you can copy</p>
+          <div>
+            {% for size in styleguide.sizes() %}
+              <div class="[ bg-dark color-light pad-top-base pad-bottom-base pad-left-base md:width-half ] [ gap-top-{{ size.key }} ]">
+                <code>gap-top-{{ size.key }}</code>
+              </div>
+            {% endfor %}
+          </div>
+          <h3>Padding</h3>
+          <p class="visually-hidden">Padding token classes that you can copy</p>
           {% for size in styleguide.sizes() %}
-            <div class="[ bg-dark color-light pad-top-base pad-bottom-base pad-left-base md:width-half ] [ gap-top-{{ size.key }} ]">
-              <code>gap-top-{{ size.key }}</code>
+            <div class="[ bg-dark pad-left-base color-light md:width-half ] [ pad-top-{{ size.key }} ]">
+              <code>pad-top-{{ size.key }}</code>
+            </div>
+            <div class="[ bg-dark pad-left-base color-light md:width-half ] [ pad-bottom-{{ size.key }} ]">
+              <code>pad-bottom-{{ size.key }}</code>
+            </div>
+            <div class="[ bg-dark color-light md:width-half ] [ pad-left-{{ size.key }} ]">
+              <code>pad-left-{{ size.key }}</code>
             </div>
           {% endfor %}
-        </div>
-        <h3>Padding</h3>
-        <p class="visually-hidden">Padding token classes that you can copy</p>
-        {% for size in styleguide.sizes() %}
-          <div class="[ bg-dark pad-left-base color-light md:width-half ] [ pad-top-{{ size.key }} ]">
-            <code>pad-top-{{ size.key }}</code>
-          </div>
-          <div class="[ bg-dark pad-left-base color-light md:width-half ] [ pad-bottom-{{ size.key }} ]">
-            <code>pad-bottom-{{ size.key }}</code>
-          </div>
-          <div class="[ bg-dark color-light md:width-half ] [ pad-left-{{ size.key }} ]">
-            <code>pad-left-{{ size.key }}</code>
-          </div>
-        {% endfor %}
-      </section>
-    </article>
-  </main>
-{% endblock %}
+        </section>
+      </article>
+    </main>
+  {% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'layouts/base.njk' %}
+{% set pageType = 'Post' %}
+
+{# Intro content #}
+{% set introHeading = title %}
+{% set introSummary %}
+{% endset %}
+
+{% block content %}
+  <main id="main-content" tabindex="-1">
+    <article class="[ post ] [ h-entry ]">
+      {% include "partials/components/intro.njk" %}
+      <div class="[ main-content ] container pt-8 md:pt-12 lg:pt-16 {{ 'pb-8 md:pb-12 lg:pb-16' if not site.enableThirdPartyComments }} [ e-content ]">
+        {{ content | safe }}
+      </div>
+      {% if site.enableThirdPartyComments %}
+        <hr/>
+        <aside class="[ post__body ] [ inner-wrapper ] [ pad-bottom-900 text-500 ]">
+          {% include "partials/global/third-party-comments.njk" %}
+        </aside>
+      {% endif %}
+    </article>
+  </main>
+{% endblock %}
+
+{{ content | safe }}

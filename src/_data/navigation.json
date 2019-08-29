@@ -13,6 +13,16 @@
       "text": "Twitter",
       "url": "https://twitter.com/windowswebdev",
       "external": true
+    },
+    {
+      "text": "Documentation",
+      "url": "/documentation",
+      "external": false
+    },
+    {
+      "text": "Styleguide",
+      "url": "/styleguide-tailwind",
+      "external": false
     }
   ]
 }

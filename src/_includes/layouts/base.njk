@@ -18,11 +18,12 @@
     <style>
       {% include "assets/css/global.css" %}
       {% include "assets/css/site.css" %}
+      {% include "assets/css/credit-sources.css" %}
     </style>
     {% block head %}{% endblock %}
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
-  <body class="font-sans text-base leading-tight text-neutral-800">
+  <body class="font-sans text-base leading-tight bg-body text-body">
     {% include "partials/global/site-head.njk" %}
     {% block content %}{% endblock content %}
     {% include "partials/global/site-foot.njk" %}

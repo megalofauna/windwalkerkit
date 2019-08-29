@@ -6,9 +6,9 @@
 
 code[class*='language-'],
 pre[class*='language-'] {
-  color: #f8f8f2;
-  background: black;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  color: var(--code-block-text-color);
+  background-color: var(--code-block-bg-color);
+  @apply font-mono;
   text-align: left;
   word-spacing: normal;
   word-break: normal;
@@ -22,13 +22,6 @@ pre[class*='language-'] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
-}
-
-/* Inline code */
-:not(pre)>code[class*='language-'] {
-  padding: 0.1em;
-  border-radius: 0.3em;
-  white-space: normal;
 }
 
 .token.comment,

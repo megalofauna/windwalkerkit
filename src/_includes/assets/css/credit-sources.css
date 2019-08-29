@@ -1,0 +1,59 @@
+[data-project] {
+  border: 4px solid transparent;
+  transition: box-shadow 250ms ease-in-out;
+
+}
+
+[data-project="eleventy"]:hover {
+  color: white;
+  border-color: rgb(255, 255, 255);
+  box-shadow: 0 0 100px rgb(255, 255, 255, .35);
+}
+
+[data-project="hylia"]:hover {
+  color: rgb(254, 220, 140, 1);
+  border-color: #FEDC8C;
+  box-shadow: 0 0 100px rgb(254, 220, 140, .45);
+}
+
+[data-project="tailwind"]:hover {
+  color: rgb(23, 188, 185, 1);
+  border-color: #17BCB9;
+  box-shadow: 0 0 100px rgb(23, 188, 185, .75);
+}
+
+.windwalker {
+  position: relative;
+  border: 4px solid rgba(247, 201, 72, 1);
+  transition: all 250ms ease-in-out;
+}
+
+.windwalker {
+  transition: box-shadow 500ms ease-in-out;
+}
+
+.windwalker.shadow-eleventy {
+  box-shadow:
+    0 0 15px rgba(247, 201, 72, .125),
+    0 0 150px rgb(255, 255, 255, .75);
+  border: 4px solid rgb(255, 255, 255, .75);
+  transition: all 250ms ease-in-out;
+}
+
+
+.windwalker.shadow-hylia {
+  box-shadow:
+    0 0 15px rgba(247, 201, 72, .125),
+    0 0 150px rgb(254, 220, 140, .75);
+  border: 4px solid rgb(254, 220, 140, .75);
+  transition: all 250ms ease-in-out;
+}
+
+
+.windwalker.shadow-tailwind {
+  box-shadow:
+    0 0 15px rgba(247, 201, 72, .125),
+    0 0 150px rgba(23, 188, 185, .95);
+  border: 4px solid rgba(23, 188, 185, .95);
+  transition: all 250ms ease-in-out;
+}

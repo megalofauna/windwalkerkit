@@ -16,7 +16,7 @@
   <main id="main-content" tabindex="-1">
     <article class="[ post ] [ h-entry ]">
       {% include "partials/components/intro.njk" %}
-      <div class="[ post__body ] container [ pad-top-900 {{ 'pad-bottom-900' if not site.enableThirdPartyComments }} [ e-content ]">
+      <div class="[ main-content ] container [ pad-top-900 {{ 'pad-bottom-900' if not site.enableThirdPartyComments }} [ e-content ]">
         {{ content | safe }}
       </div>
       {% if site.enableThirdPartyComments %}
@@ -30,10 +30,10 @@
           <div class="container">
             <div class="[ nav ] [ box-flex align-center ]">
               <h2 class="font-base text-600 weight-mid">Filed under</h2>
-              <ul class="[ nav__list ] [ box-flex align-center pad-left-400 ] [ p-category ]">
+              <ul class="[ nav__list ] flex items-center pl-8 [ p-category ]">
                 {% for item in tags %}
                   <li class="nav__item">
-                    <a href="/tags/{{ item }}">{{ item }}</a>
+                    <a class="tag px-3 py-2 border-2" href="/tags/{{ item }}">{{ item }}</a>
                   </li>
                 {% endfor %}
               </ul>

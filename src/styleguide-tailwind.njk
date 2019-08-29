@@ -1,0 +1,150 @@
+---
+title: 'Styleguide'
+permalink: /styleguide-tailwind/
+---
+
+{% extends 'layouts/base.njk' %}
+
+{# Intro content #}
+{% set introHeading = title %}
+
+{% block head %}
+  <style>
+    .swatches {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+      grid-gap: 2.5rem 2rem;
+      margin-left: 0;
+    }
+
+    .swatches > * {
+      margin-top: 0 !important;
+    }
+
+    .props dt {
+      font-weight: 600;
+    }
+
+    .props dd + dt {
+      margin-top: 0.5rem;
+      display: block;
+    }
+
+    .color {
+      border: 1px solid var(--color-mid);
+    }
+
+    .bg-dark code {
+      color: var(--color-light);
+    }
+  </style>
+{% endblock %}
+{% block content %}
+  <main id="main-content" tabindex="-1">
+    {% include "partials/components/intro.njk" %}
+    <article class="full-bleed">
+      <section class="py-16 px-16 max-w-6xl mx-auto">
+        <h2>Primaries</h2>
+        <p class="visually-hidden">Colour swatches with various values that you can copy.</p>
+        <ul class="mt-8 swatches">
+          {% for primary in styleguidetailwind.primaries() %}
+            <li class="sf-flow">
+              <div class="rounded py-16 shadow" style="background: {{ primary.value }}"></div>
+              <h3 class="font-base text-500">Primary {{ primary.key }}</h3>
+              <dl class="props">
+                <dt>Hex value</dt>
+                <dd>
+                  <code>{{ primary.value }}</code>
+                </dd>
+                <dt>Theme access</dt>
+                <dd>
+                  <code>theme('colors.primary.{{ primary.key }}')</code>
+                </dd>
+                <dt>Custom Property</dt>
+                <dd>
+                  <code>var(--primary-{{ primary.key }})</code>
+                </dd>
+                <dt>Text utility class</dt>
+                <dd>
+                  <code>text-primary-{{ primary.key }}</code>
+                </dd>
+                <dt>Background utility class</dt>
+                <dd>
+                  <code>bg-primary-{{ primary.key }}</code>
+                </dd>
+              </dl>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+      <section class="mt-16 py-16 px-16 max-w-6xl mx-auto">
+        <h2>Neutrals</h2>
+        <p class="visually-hidden">Colour swatches with various values that you can copy.</p>
+        <ul class="mt-8 swatches">
+          {% for neutral in styleguidetailwind.neutrals() %}
+            <li class="sf-flow">
+              <div class="rounded py-16 shadow" style="background: {{ neutral.value }}"></div>
+              <h3 class="font-base text-500">{{ neutral.key }}</h3>
+              <dl class="props">
+                <dt>Value</dt>
+                <dd>
+                  <code>{{ neutral.value }}</code>
+                </dd>
+                <dt>Sass function</dt>
+                <dd>
+                  <code>get-neutral('{{ neutral.key }}')</code>
+                </dd>
+                <dt>Custom Property</dt>
+                <dd>
+                  <code>var(--neutral-{{ neutral.key }})</code>
+                </dd>
+                <dt>Text util class</dt>
+                <dd>
+                  <code>neutral-{{ neutral.key }}</code>
+                </dd>
+                <dt>Background util class</dt>
+                <dd>
+                  <code>bg-{{ neutral.key }}</code>
+                </dd>
+              </dl>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+      <section class="mt-16 py-16 px-16 max-w-6xl mx-auto">
+        <h2>Section backgrounds</h2>
+        <p class="visually-hidden">Colour swatches with various values that you can copy.</p>
+        <ul class=" mt-8 swatches">
+          {% for background in styleguidetailwind.backgrounds() %}
+            <li class="sf-flow">
+              <div class="rounded py-16 shadow" style="background: {{ background.value }}"></div>
+              <h3 class="font-base text-500">{{ background.key }} background</h3>
+              <dl class="props">
+                <dt>Value</dt>
+                <dd>
+                  <code>{{ background.value }}</code>
+                </dd>
+                <dt>Sass function</dt>
+                <dd>
+                  <code>get-background('{{ background.key }}')</code>
+                </dd>
+                <dt>Custom Property</dt>
+                <dd>
+                  <code>var(--background-{{ background.key }})</code>
+                </dd>
+                <dt>Text util class</dt>
+                <dd>
+                  <code>background-{{ background.key }}</code>
+                </dd>
+                <dt>Background util class</dt>
+                <dd>
+                  <code>bg-{{ background.key }}</code>
+                </dd>
+              </dl>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    </article>
+  </main>
+{% endblock %}

@@ -1,0 +1,58 @@
+/* Default theme - Light */
+
+
+:root {
+
+  --inline-code-bg-color: theme('colors.primary.lightest');
+  --inline-code-text-color: theme('colors.primary.300');
+  --code-block-bg-color: theme('colors.neutral.200');
+  --code-block-text-color: theme('colors.primary.lightest');
+  --color-link-bg: theme('colors.transparent');
+  --color-link-text: theme('colors.primary.300');
+  --color-link-bg-hover: theme('colors.primary.800');
+  --color-link-text-hover: theme('colors.primary.100');
+
+  --color-selection-bg: theme('colors.primary.300');
+  --color-selection-text: theme('colors.white');
+
+
+  --bg-header: theme('colors.transparent');
+  --bg-body: theme('colors.transparent');
+  --bg-link: theme('colors.transparent');
+  --bg-link-hover: theme('colors.neutral.800');
+  --bg-callout: theme('colors.primary.500');
+  --bg-footer: theme('colors.neutral.800');
+
+  --text-body: theme('colors.neutral.200');
+  --text-link: theme('colors.neutral.400');
+  --text-link-hover: theme('colors.neutral.100');
+}
+
+
+
+
+
+
+
+
+
+/* Alternative theme - dark  */
+
+@include dark-mode {
+  --bg-header: theme('colors.transparent');
+  --bg-body: theme('colors.neutral.200');
+  --bg-link: theme('colors.neutral.500');
+  --bg-callout: theme('colors.primary.500');
+  --bg-footer: theme('colors.neutral.100');
+
+
+  --text-body: theme('colors.neutral.lightest');
+}
+
+a:not([class]) {
+  @apply bg-link text-link px-micro-ch py-micro-ex rounded-sm;
+
+  &:hover {
+    @apply bg-link-hover text-link-hover no-underline;
+  }
+}

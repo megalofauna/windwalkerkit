@@ -4,12 +4,53 @@
 
 @import "mixins/dark-mode";
 
-@import "theme";
+@import "extends/full-bleed";
 
-@import "typography";
+@import "theme/skin";
 
-@import 'components/syntax-highlighting';
+@import "typography/global";
+@import "typography/main-content";
 
 @import 'components/post';
+@import 'components/syntax-highlighting';
+@import 'components/tags';
 
 @import "tailwindcss/utilities";
+
+img {
+  max-width: unset;
+}
+
+.container {
+  @apply px-8;
+}
+
+@screen sm {
+  .container {
+    @apply px-10;
+  }
+}
+
+@screen md {
+  .container {
+    @apply px-12;
+  }
+}
+
+@screen lg {
+  .container {
+    @apply px-16;
+  }
+}
+
+code {
+  @apply font-bold;
+  font-size: 1em;
+  color: var(--color-theme-primary);
+  margin-left: 0.01ch;
+  margin-right: 0.01ch;
+}
+
+svg:not([class]) {
+  @apply inline-block;
+}

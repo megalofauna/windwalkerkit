@@ -2,11 +2,12 @@
 <header role="banner" class="[ site-head ] [ pad-top-700 pad-bottom-700 ">
   <div class="container">
     <span class="visually-hidden">{{ site.name }}: {{ pageType }}</span>
-    <div class="[ site-head__inner ] [ md:box-flex space-between align-center ]">
-      <a href="/" class="[ site-head__site-name ] [ leading-tight ]"{{ 'aria-current=page' if page.url == '/' | safe }}>
+    <div class="[ site-head__inner ] md:flex md:justify-between md:items-center ]">
+      <a href="/" class="[ site-head__site-name ] leading-tight"{{ 'aria-current=page' if page.url == '/' | safe }}>
         <span class="visually-hidden">{{ 'Back to homepage' if page.url != '/' else 'Homepage' }}</span>
-        <span class="[ site-head__site-name ] [ text-600 ]" aria-hidden="true">
+        <span class="[ site-head__site-name ] flex items-center" aria-hidden="true">
           {% include "icons/site-logo.svg" %}
+          <span class="font-title text-xl">{{ site.name }}</span>
         </span>
       </a>
       {% include "partials/components/nav.njk" %}

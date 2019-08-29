@@ -1,4 +1,4 @@
-/* Style post__body content here for two main reasons:
+/* Style main-content content here for two main reasons:
  * 1. To account for the fact that some content will be wrapped with element tags 
  *    dynamically by the front-end, and, thus, may not appear in the layout files that 
  *    purgcess audits for active elements and classes
@@ -11,8 +11,7 @@
 
 /* purgecss start ignore */
 
-.page-content {
-
+.main-content {
 
   /* remove top and bottom margin from all elements in post__body */
   * {
@@ -24,18 +23,47 @@
     @apply mt-6;
   }
 
-  h2,
+
+  /* remove margin-top from initial article heading */
+  :first-child {
+    @apply mt-0;
+  }
+
+  /* Set margin-top for various heading scenarios at small viewport sizes */
+  h2 {
+    @apply mt-12;
+    /* Theme */
+  }
+
   h3 {
+    @apply mt-10;
+  }
+
+  h2+h3 {
+    @apply mt-6;
+  }
+
+  h4 {
     @apply mt-8;
+  }
+
+
+  h3+h4 {
+    @apply mt-3
   }
 
   h2+*,
   h3+* {
+    @apply mt-3;
+  }
+
+  h4+* {
     @apply mt-2;
   }
 
   h2 a,
-  h3 a {
+  h3 a,
+  h4 a {
     @apply inline-block h-4 w-4 m-0 ml-2;
 
     svg {
@@ -43,8 +71,45 @@
     }
   }
 
-  p {
-    @apply text-lg leading-snug;
+  p,
+  ul,
+  ol {
+    @apply text-base leading-normal;
+  }
+
+  ul,
+  ol {
+    @apply list-inside mt-2;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  li+li {
+    @apply mt-1;
+  }
+
+  :not(pre) code {
+    @apply font-normal;
+    background-color: var(--inline-code-bg-color);
+    color: var(--inline-code-text-color);
+    font-size: .9em;
+    padding: .125ex .25ch;
+    margin-left: 0.25ch;
+    margin-right: 0.25ch;
+  }
+
+  pre {
+    @apply font-normal rounded;
+  }
+
+  pre>code {
+    @apply block p-6 text-base rounded overflow-x-auto;
   }
 
   figure,
@@ -53,7 +118,7 @@
   video {
     @extend full-bleed;
     /* See "src/css/extends/full-bleed.css" for source */
-    @apply max-w-full;
+    @apply max-w-full my-10;
     /* constrain the effect of the full-bleed extend to 100% of its parent container 
      * to prevent it from bleeding to viewport edges on small screens; 
      */
@@ -69,65 +134,76 @@
       @apply mt-12;
     }
 
-    p {
-      @apply text-xl leading-normal;
+    p,
+    ul,
+    ol {
+      @apply text-lg;
+    }
+
+    pre>code {
+      @apply p-6 text-lg;
     }
 
     figure,
     pre>code,
     .video-player,
     video {
-      @apply max-w-3xl;
+      @apply my-12;
       /* constrain the effect of the full-bleed extend to a specified max-width */
     }
-
   }
 
   @screen lg {
-    *+* {
+    /* inherits from @md */
+    /* *+* {
       @apply mt-10;
-    }
+    } */
 
     h2,
     h3 {
       @apply mt-16;
     }
 
-    h2+*,
-    h3+* {
-      @apply mt-3;
+    h4 {
+      @apply mt-12;
     }
+
+    h2+* {
+      @apply mt-4;
+    }
+
+    h3+*,
+    h4+* {
+      @apply mt-2;
+    }
+
+
 
     h2 a,
     h3 a {
       @apply w-6 h-6 ml-3;
     }
 
-    p {
-      @apply leading-relaxed;
+    p,
+    ul,
+    ol {
+      @apply text-xl leading-normal;
+    }
+
+    pre>code {
+      /* @apply text-xl; */
     }
 
     figure,
     pre>code,
     .video-player,
     video {
-      @apply max-w-5xl;
+      @apply max-w-5xl my-16;
       /* constrain the effect of the full-bleed extend to a specified max-width */
     }
 
   }
 
-
-
-
-
-  pre>code {
-    background: black;
-    margin-right: 0;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
 
   /* blockquote {
       border-left: 0.4rem solid var(--color-theme-primary-glare);
@@ -162,11 +238,11 @@
 
 
 
-  figure img,
+  /* figure img,
   pre>code,
   .video-player {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  }
+  } */
 
   figure img {
     position: relative;
@@ -179,14 +255,6 @@
     max-width: 100%;
     margin: 0.5rem auto 0 auto;
     /* padding: 0 get-size(500); */
-  }
-
-  pre>code {
-    display: block;
-    /* background: var(--color-dark); */
-    background-color: black;
-    /* padding: get-size(700);
-      font-size: get-size(500); */
   }
 }
 
