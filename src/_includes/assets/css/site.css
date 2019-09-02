@@ -706,6 +706,8 @@ a:not([class]):hover {
     text-decoration: none;
   }
 
+/* purgecss start ignore */
+
 /* Inter Bold - Full */
 
 @font-face {
@@ -761,7 +763,6 @@ a:not([class]) {
   text-decoration: underline;
   cursor: pointer;
   border-radius: 0.125rem;
-  padding:  ;
   color: var(--link-text);
   background-color: var(--bg-link);
 }
@@ -849,6 +850,8 @@ pre>code {
     font-size: 1.125rem;
   }
 }
+
+/* purgecss end ignore */
 
 /* Style main-content content here for two main reasons:
  * 1. To account for the fact that some content will be wrapped with element tags 
