@@ -44,7 +44,7 @@
     "cms:bundle": "rollup --config",
     "start": "concurrently 'npm run postcss' 'npm run cms:bundle -- --watch' 'chokidar \"src/_includes/**\" -c \"npm run cms:precompile\"' 'npm run serve' 'npm run watch'",
     "serve": "cross-env ELEVENTY_ENV=development npx eleventy --serve",
-    "production": "npm run postcss:production && npm run sass:process && npm run cms:precompile && npm run cms:bundle && npx eleventy",
+    "production": "npm run postcss:production && npm run cms:precompile && npm run cms:bundle && npx eleventy",
     "postcss": "postcss src/css/site.css --output src/_includes/assets/css/site.css",
     "postcss:production": "NODE_ENV=production postcss src/css/site.css --output src/_includes/assets/css/site.css",
     "watch": "watch 'npm run postcss' ./src/css"
