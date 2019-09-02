@@ -13,7 +13,7 @@ module.exports = {
     colors: {
       transparent: 'transparent',
 
-      black: '#1C322E',
+      black: '#111111',
       white: '#fff',
 
       primary: {
@@ -25,15 +25,16 @@ module.exports = {
         600: '#FFFBEA'
       },
       neutral: {
-        100: '#304743',
-        200: '#40514D',
-        300: '#4D605B',
-        400: '#666C6A',
-        500: '#738881',
-        600: '#8FACA2',
-        700: '#B7C4BF',
-        800: '#EAEBEB',
-        900: '#F5F5F5'
+        100: '#1C322E',
+        200: '#304743',
+        300: '#40514D',
+        400: '#4D605B',
+        500: '#666C6A',
+        600: '#738881',
+        700: '#8FACA2',
+        800: '#B7C4BF',
+        900: '#EAEBEB',
+        1000: '#F5F5F5'
       }
     },
     skin: {
@@ -42,21 +43,31 @@ module.exports = {
         'body': 'var(--bg-body)',
         'link': 'var(--bg-link)',
         'link-hover': 'var(--bg-link-hover)',
+        'code-inline': 'var(--bg-code-inline)',
+        'code-block': 'var(--bg-code-block)',
         'callout': 'var(--bg-callout)',
         'footer': 'var(--bg-footer)',
       },
       text: {
+        'header': 'var(--text-header)',
         'body': 'var(--text-body)',
         'link': 'var(--text-link)',
-        'link-hover': 'var(--text-link-hover)'
+        'link-hover': 'var(--text-link-hover)',
+        'code-inline': 'var(--text-code-inline)',
+        'code-block': 'var(--text-code-block)',
+        'footer': 'var(--text-footer)'
       },
+      border: {
+        'primary': 'var(--border-primary)',
+        'secondary': 'var(--border-secondary)'
+      }
     },
     container: {
       center: true
     },
     fontFamily: {
       sans: [
-        'Inter Regular',
+        'Inter',
         '-apple-system',
         'BlinkMacSystemFont',
         '"Segoe UI"',
@@ -102,13 +113,12 @@ module.exports = {
       ],
     },
     fontSize: {
-      'micro': '',
       xs: '0.75rem',
       sm: '0.875rem',
       base: '1rem',
       lg: '1.125rem',
       xl: '1.25rem',
-      '2xl': '1.5rem',
+      '2xl': '1.375rem',
       '3xl': '1.875rem',
       '4xl': '2.25rem',
       '5xl': '3rem',
@@ -140,8 +150,12 @@ module.exports = {
     },
     extend: {
       spacing: {
-        'micro-ch': '0.25ch',
+        'micro-ch': '0.5ch',
         'micro-ex': '0.125ex'
+      },
+      maxWidth: {
+        '7xl': '80rem',
+        '8xl': '96rem'
       }
     }
   },
@@ -236,7 +250,34 @@ module.exports = {
           }
         }
       })
-      addUtilities(text)
+      addUtilities(text);
+      const borders = _.map(theme('skin.border'), (value, key) => {
+        return {
+          [`.border-${key}`]: {
+            borderColor: `${value}`
+          }
+        }
+      })
+      addUtilities(borders);
+    },
+    function ({
+      addComponents
+    }) {
+      const bleeds = {
+        '.bleed-full': {
+          position: 'relative',
+          width: '100vw',
+          marginLeft: '50%',
+          transform: 'translateX(-50%)'
+        },
+        '.bleed-lg': {
+          position: 'relative',
+          width: '50vw',
+          marginLeft: '50%',
+          transform: 'translateX(-50%)'
+        },
+      }
+      addComponents(bleeds, ['responsive'])
     }
   ]
 }

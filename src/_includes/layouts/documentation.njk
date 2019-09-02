@@ -3,19 +3,19 @@
 
 {# Intro content #}
 {% set introHeading = title %}
-{% set introSummary %}
-{% endset %}
+{% set introSummary = summary %}
 
 {% block content %}
-  <main id="main-content" tabindex="-1">
-    <article class="[ post ] [ h-entry ]">
+  <main id="main-content" class="container" tabindex="-1">
+    <article class="max-w-5xl mx-auto [ h-entry ]">
       {% include "partials/components/intro.njk" %}
-      <div class="[ main-content ] container pt-8 md:pt-12 lg:pt-16 {{ 'pb-8 md:pb-12 lg:pb-16' if not site.enableThirdPartyComments }} [ e-content ]">
+      {% include "partials/components/callout.njk" %}
+      <div class="content [ main-content ] pt-8 md:pt-12 lg:pt-16 {{ 'pb-16 md:pb-24 lg:pb-32' if not site.enableThirdPartyComments }} [ e-content ]">
         {{ content | safe }}
       </div>
       {% if site.enableThirdPartyComments %}
         <hr/>
-        <aside class="[ post__body ] [ inner-wrapper ] [ pad-bottom-900 text-500 ]">
+        <aside class="">
           {% include "partials/global/third-party-comments.njk" %}
         </aside>
       {% endif %}

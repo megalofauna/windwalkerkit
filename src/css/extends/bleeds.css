@@ -15,8 +15,6 @@
 @define-placeholder full-bleed {
   position: relative;
   width: 100vw;
-  /*changing this value to 47% removes the horizontal scrollbar once the viewport is < 930px */
   margin-left: 50%;
-  /* changing this value to 49% allows for the suggestion above to also eliminate the horizontal scroll. */
   transform: translateX(-50%);
 }

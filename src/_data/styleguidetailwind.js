@@ -25,16 +25,16 @@ module.exports = {
 
     return response;
   },
-  backgrounds() {
-    let response = [];
-
-    Object.keys(tokens.theme.skin.background).forEach(key => {
-      response.push({
-        value: tokens.theme.skin.background[key],
-        key
-      });
-    });
-
-    return response;
-  },
+  // backgrounds() {
+  //   let response = [];
+  //     response.push(tokens.theme.colors.neutral)
+  //     response.push({
+  //       value: `bg-${tokens.theme.skin.background}`,
+  //       key
+  //   })
+  //   return response;
+  // },
+  // backgrounds() {
+  //   console.log("Heyo!")
+  // }
 };

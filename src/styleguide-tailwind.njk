@@ -12,64 +12,54 @@ permalink: /styleguide-tailwind/
   <style>
     .swatches {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-      grid-gap: 2.5rem 2rem;
+      grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+      grid-gap: 3rem 1.5rem;
       margin-left: 0;
+    }
+
+    @media screen and (min-width: 1024px) {
+      .swatches {
+        grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+      }
     }
 
     .swatches > * {
       margin-top: 0 !important;
     }
 
-    .props dt {
-      font-weight: 600;
-    }
-
-    .props dd + dt {
-      margin-top: 0.5rem;
+    .props dd+dt {
+      margin-top: 1.5rem;
       display: block;
-    }
-
-    .color {
-      border: 1px solid var(--color-mid);
-    }
-
-    .bg-dark code {
-      color: var(--color-light);
     }
   </style>
 {% endblock %}
 {% block content %}
-  <main id="main-content" tabindex="-1">
+  <main id="main-content" class="container" tabindex="-1">
     {% include "partials/components/intro.njk" %}
-    <article class="full-bleed">
-      <section class="py-16 px-16 max-w-6xl mx-auto">
+    <article>
+      <section class="py-16">
         <h2>Primaries</h2>
         <p class="visually-hidden">Colour swatches with various values that you can copy.</p>
         <ul class="mt-8 swatches">
           {% for primary in styleguidetailwind.primaries() %}
             <li class="sf-flow">
-              <div class="rounded py-16 shadow" style="background: {{ primary.value }}"></div>
+              <div class="rounded py-16" style="background: {{ primary.value }}"></div>
               <h3 class="font-base text-500">Primary {{ primary.key }}</h3>
               <dl class="props">
-                <dt>Hex value</dt>
-                <dd>
+                <dt class="mt-4">Hex value</dt>
+                <dd class="mt-2">
                   <code>{{ primary.value }}</code>
                 </dd>
-                <dt>Theme access</dt>
-                <dd>
+                <dt class="mt-4">Theme access</dt>
+                <dd class="mt-2">
                   <code>theme('colors.primary.{{ primary.key }}')</code>
                 </dd>
-                <dt>Custom Property</dt>
-                <dd>
-                  <code>var(--primary-{{ primary.key }})</code>
-                </dd>
-                <dt>Text utility class</dt>
-                <dd>
+                <dt class="mt-4">Text utility class</dt>
+                <dd class="mt-2">
                   <code>text-primary-{{ primary.key }}</code>
                 </dd>
-                <dt>Background utility class</dt>
-                <dd>
+                <dt class="mt-4">Background utility class</dt>
+                <dd class="mt-2">
                   <code>bg-primary-{{ primary.key }}</code>
                 </dd>
               </dl>
@@ -77,74 +67,163 @@ permalink: /styleguide-tailwind/
           {% endfor %}
         </ul>
       </section>
-      <section class="mt-16 py-16 px-16 max-w-6xl mx-auto">
+      <section class="mt-16 py-16">
         <h2>Neutrals</h2>
         <p class="visually-hidden">Colour swatches with various values that you can copy.</p>
         <ul class="mt-8 swatches">
           {% for neutral in styleguidetailwind.neutrals() %}
             <li class="sf-flow">
-              <div class="rounded py-16 shadow" style="background: {{ neutral.value }}"></div>
-              <h3 class="font-base text-500">{{ neutral.key }}</h3>
+              <div class="rounded py-16 shadow-lg" style="background: {{ neutral.value }}"></div>
+              <h3 class="font-base text-500">Neutral {{ neutral.key }}</h3>
               <dl class="props">
-                <dt>Value</dt>
-                <dd>
+                <dt class="mt-6">Value</dt>
+                <dd class="mt-2">
                   <code>{{ neutral.value }}</code>
                 </dd>
-                <dt>Sass function</dt>
-                <dd>
-                  <code>get-neutral('{{ neutral.key }}')</code>
+                <dt class="mt-6">Text util class</dt>
+                <dd class="mt-2">
+                  <code>text-neutral-{{ neutral.key }}</code>
                 </dd>
-                <dt>Custom Property</dt>
-                <dd>
-                  <code>var(--neutral-{{ neutral.key }})</code>
-                </dd>
-                <dt>Text util class</dt>
-                <dd>
-                  <code>neutral-{{ neutral.key }}</code>
-                </dd>
-                <dt>Background util class</dt>
-                <dd>
-                  <code>bg-{{ neutral.key }}</code>
+                <dt class="mt-6">Background util class</dt>
+                <dd class="mt-2">
+                  <code>bg-neutral-{{ neutral.key }}</code>
                 </dd>
               </dl>
             </li>
           {% endfor %}
         </ul>
       </section>
-      <section class="mt-16 py-16 px-16 max-w-6xl mx-auto">
-        <h2>Section backgrounds</h2>
+      <section class="mt-16 py-16">
+        <h2>Section theming</h2>
         <p class="visually-hidden">Colour swatches with various values that you can copy.</p>
-        <ul class=" mt-8 swatches">
-          {% for background in styleguidetailwind.backgrounds() %}
-            <li class="sf-flow">
-              <div class="rounded py-16 shadow" style="background: {{ background.value }}"></div>
-              <h3 class="font-base text-500">{{ background.key }} background</h3>
-              <dl class="props">
-                <dt>Value</dt>
-                <dd>
-                  <code>{{ background.value }}</code>
-                </dd>
-                <dt>Sass function</dt>
-                <dd>
-                  <code>get-background('{{ background.key }}')</code>
-                </dd>
-                <dt>Custom Property</dt>
-                <dd>
-                  <code>var(--background-{{ background.key }})</code>
-                </dd>
-                <dt>Text util class</dt>
-                <dd>
-                  <code>background-{{ background.key }}</code>
-                </dd>
-                <dt>Background util class</dt>
-                <dd>
-                  <code>bg-{{ background.key }}</code>
-                </dd>
-              </dl>
-            </li>
-          {% endfor %}
-        </ul>
-      </section>
+        <div class="mt-8 mock mock-body shadow-2xl" style="background-color: var(--bg-body)">
+          <div class="mock-body rounded overflow-hidden" style="background-color:var(--bg-body)">
+            <header class="relative mock-section mock-header p-8 md:p-12 lg:p-16 border-b border-primary" style="background-color: var(--bg-header)">
+              <span class="absolute text-sm font-mono opacity-50 top-0 left-0 mt-4 ml-4 text-neutral-400">
+              &lt;header&gt;
+            </span>
+              <span class="absolute text-sm font-mono opacity-50 bottom-0 right-0 mb-4 mr-4 text-neutral-400">
+              &lt;/header&gt;
+            </span>
+              <div class="flex flex-wrap">
+                <h3 class="text-3xl w-full md:w-1/4 font-bold">Header</h3>
+                <div class="mt-4 md:mt-0 props w-full md:w-3/4">
+                  <dl>
+                    <dt>CSS variable</dt>
+                    <dd>
+                      <code>
+                      var(--bg-header)
+                    </code>
+                    </dd>
+                    <dt>
+                    Current color value
+                  </dt>
+                    <dd class="hex-value"></dd>
+                  </dl>
+                </div>
+                <div class="mt-16 lorem-ipsum mt-8 tracking-tighter leading-loose text-body">
+                  <p>
+                  █████████ ████████████ ████████████████████ ██████████████████ █████████ ████████████ ████████████████████ ██████████████████
+                </p>
+                  <dl class="mt-4">
+                    <dt>CSS variable</dt>
+                    <dd>
+                      <code>
+                      var(--text-body)
+                    </code>
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+            </header>
+            <main class="relative bg-main mock-section mock-main p-8 px-8 pb-16 md:pt-12 md:px-12 md:pb-24 lg:pt-16 lg:px-16 lg:pb-32 border-b border-primary">
+              <span class="absolute text-sm font-mono opacity-50 top-0 left-0 mt-4 ml-4 text-neutral-400">
+                &lt;main&gt;
+              </span>
+              <span class="absolute text-sm font-mono opacity-50 bottom-0 right-0 mb-4 mr-4 text-neutral-400">
+                &lt;/main&gt;
+              </span>
+              <div class="flex flex-wrap">
+                <div class="w-auto md:w-full lg:w-2/5 props pr-12">
+                  <h3 class="mt-8 md:mt-0 text-3xl font-bold">Main</h3>
+                  <div class="mt-8 md:flex md:flex-wrap lg:block">
+                    <dl class="md:w-1/2 lg:w-full t-12 md:mt-0 lg:mt-12 md:pr-4 lg:pr-0">
+                      <dt class="pb-2 border-b border-primary font-bold">Background</dt>
+                      <dd class="mt-3 lg:flex lg:items-center">
+                        <span class="lg:w-1/5 text-sm font-bold font-mono inline-block mr-1">Var</span>
+                        <code class="w-auto">
+                          var(--bg-main)
+                        </code>
+                      </dd>
+                      <dd class="mt-2 lg:flex lg:items-center">
+                        <span class="lg:w-1/5 text-sm font-bold font-mono inline-block mr-1">Class</span>
+                        <code class="w-auto">
+                          bg-main
+                        </code>
+                      </dd>
+                    </dl>
+                    <dl class="md:w-1/2 lg:w-full mt-12 md:mt-0 lg:mt-12 md:pl-4 lg:pl-0">
+                      <dt class="mt-8 md:mt-0 lg:mt-8 pb-2 border-b border-primary font-bold">Text</dt>
+                      <dd class="mt-3 lg:flex lg:items-center">
+                        <span class="lg:w-1/5 text-sm font-bold font-mono inline-block mr-1">Var</span>
+                        <code class="w-auto">
+                          var(--text-main)
+                        </code>
+                      </dd>
+                      <dd class="mt-2 lg:flex lg:items-center">
+                        <span class="lg:w-1/5 text-sm font-bold font-mono inline-block mr-1">Class</span>
+                        <code class="w-auto">
+                          text-main
+                        </code>
+                      </dd>
+                    </dl>
+                    <p class="mt-16 pb-2 border-b border-primary font-bold">Current values</p>
+                    <div class="mt-3 style-values"></div>
+                  </div>
+                </div>
+
+                <div class="content mt-16 lg:mt-0 w-full lg:w-3/5 main-content lorem-ipsum tracking-tighter leading-loose text-body">
+                  <p>
+                    Huh? Doc, you gotta help- Hi, Marty. My insurance, it's your car, your insurance should pay for it. Hey, I wanna know who's gonna pay for this? I spilled beer all over it when that car smashed into me. Who's gonna pay my cleaning bill? Ah. Whoa.
+                  </p>
+                  <p>
+                    No wait, Doc, the bruise, the bruise on your head, I know how that happened, you told me the whole story. you were standing on your toilet and you were hanging a clock, and you fell, and you hit your head on the sink, and that's when you came up with the idea for the flux capacitor, which makes time travel possible. You want it, you know you want it, and you know you want me to give it to you. Uh, I think so. Oh, you make it sound so easy. I just, I wish I wasn't so scared. No, no, George, look, it's just an act, right? Okay, so 9:00 you're strolling through the parking lot, you see us struggling in the car, you walk up, you open the door and you say, your line, George.
+                  </p>
+                </div>
+              </div>
+            </main>
+            <footer class="mock-section mock-footer p-8 md:p-12 lg:p-16 rounded-b text-footer" style="background-color: var(--bg-footer)">
+              <div class="flex flex-wrap main-content">
+                <h3 class="text-3xl w-full md:w-1/4 font-bold">Footer</h3>
+                <div class="mt-4 md:mt-0 props w-full md:w-3/4">
+                  <dl>
+                    <dt>CSS variable</dt>
+                    <dd>
+                      <code>
+                      var(--bg-footer)
+                    </code>
+                    </dd>
+                    <dt>
+                    Current color value
+                  </dt>
+                    <dd class="hex-value"></dd>
+                  </dl>
+                </div>
+                <div class="mt-16 lorem-ipsum mt-8 tracking-tighter leading-loose">
+                  <dl class="mt-4">
+                    <dt>CSS variable</dt>
+                    <dd class="mt-0">
+                      <code>
+                      var(--text-footer)
+                    </code>
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+            </footer>
+          </div>
+        </section>
+      </div>
     </article>
   </main>
 {% endblock %}

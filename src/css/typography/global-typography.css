@@ -1,6 +1,6 @@
 /* Inter Bold - Full */
 @font-face {
-  font-family: 'Inter Bold';
+  font-family: 'Inter Bold', sans-serif;
   font-style: normal;
   font-weight: 700;
   src: local('Inter Bold'), local('Inter-Bold'),
@@ -10,9 +10,9 @@
 
 /* Inter Regular - Full */
 @font-face {
-  font-family: 'Inter Regular';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   src: local('Inter Regular'), local('Inter-Regular'),
     url('/fonts/Inter-Regular.woff2') format('woff2'),
     url('/fonts/Inter-Regular.woff') format('woff');
@@ -21,7 +21,7 @@
 h1,
 h3,
 h4 {
-  @apply font-title leading-none;
+  @apply font-bold leading-none;
 }
 
 h1 {
@@ -40,19 +40,27 @@ h4 {
   @apply text-sm uppercase tracking-wider;
 }
 
-/* a:not([class]) {
+a:not([class]) {
   @apply underline cursor-pointer rounded-sm;
-  padding: theme('spacing.micro') theme('spacing.micro') * 1.5;
-  color: var(--color-link-text);
-  background-color: var(--color-link-bg);
-  text-decoration-skip-ink: auto;
+  padding: theme('spacing.micro') theme('spacing.micro');
+  color: var(--link-text);
+  background-color: var(--bg-link);
+  /* text-decoration-skip-ink: auto; */
 
   &:hover {
     @apply no-underline;
-    color: var(--color-link-text-hover);
-    background-color: var(--color-link-bg-hover);
+    color: var(--text-link-hover);
+    background-color: var(--bg-link-hover);
   }
-} */
+}
+
+:not(pre) code {
+  @apply font-normal bg-code-inline text-code-inline py-micro-ex px-micro-ch rounded border border-primary;
+}
+
+pre>code {
+  @apply bg-code-block text-code-block;
+}
 
 @screen sm {
   h1 {

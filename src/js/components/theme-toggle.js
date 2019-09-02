@@ -85,6 +85,7 @@ class ThemeToggle extends HTMLElement {
       evt.preventDefault();
 
       this.applySetting(this.toggleSetting());
+      renderStyleguideValues('.mock-main');
     });
 
     this.applySetting();

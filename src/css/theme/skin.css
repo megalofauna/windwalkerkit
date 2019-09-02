@@ -3,8 +3,8 @@
 
 :root {
 
-  --inline-code-bg-color: theme('colors.primary.lightest');
-  --inline-code-text-color: theme('colors.primary.300');
+  --code-inline-bg-color: theme('colors.primary.lightest');
+  --code-inline-text-color: theme('colors.primary.300');
   --code-block-bg-color: theme('colors.neutral.200');
   --code-block-text-color: theme('colors.primary.lightest');
   --color-link-bg: theme('colors.transparent');
@@ -20,12 +20,20 @@
   --bg-body: theme('colors.transparent');
   --bg-link: theme('colors.transparent');
   --bg-link-hover: theme('colors.neutral.800');
+  --bg-code-inline: theme('colors.neutral.1000');
+  --bg-code-block: theme('colors.neutral.300');
   --bg-callout: theme('colors.primary.500');
-  --bg-footer: theme('colors.neutral.800');
+  --bg-footer: theme('colors.neutral.1000');
 
+  --text-header: theme('colors.neutral.200');
   --text-body: theme('colors.neutral.200');
   --text-link: theme('colors.neutral.400');
   --text-link-hover: theme('colors.neutral.100');
+  --text-code-inline: theme('colors.neutral.500');
+  --text-code-block: theme('colors.white');
+  --text-footer: theme('colors.neutral.200');
+
+  --border-primary: theme('colors.neutral.900');
 }
 
 
@@ -40,13 +48,22 @@
 
 @include dark-mode {
   --bg-header: theme('colors.transparent');
-  --bg-body: theme('colors.neutral.200');
-  --bg-link: theme('colors.neutral.500');
+  --bg-body: theme('colors.neutral.100');
+  --bg-link: theme('colors.transparent');
+  --bg-link-hover: theme('colors.neutral.600');
   --bg-callout: theme('colors.primary.500');
-  --bg-footer: theme('colors.neutral.100');
+  --bg-footer: theme('colors.black');
+  --bg-code-inline: theme('colors.black');
+  --bg-code-block: theme('colors.black');
 
 
-  --text-body: theme('colors.neutral.lightest');
+  --text-header: theme('colors.neutral.900');
+  --text-body: theme('colors.neutral.900');
+  --text-code-inline: theme('colors.neutral.800');
+  --text-code-block: theme('colors.neutral.900');
+  --text-footer: theme('colors.neutral.900');
+
+  --border-primary: theme('colors.neutral.200');
 }
 
 a:not([class]) {

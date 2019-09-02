@@ -4,12 +4,12 @@
 
 @import "mixins/dark-mode";
 
-@import "extends/full-bleed";
+@import "extends/bleeds";
 
 @import "theme/skin";
 
-@import "typography/global";
-@import "typography/main-content";
+@import "typography/global-typography";
+@import "typography/content-typography";
 
 @import 'components/post';
 @import 'components/syntax-highlighting';
@@ -17,19 +17,15 @@
 
 @import "tailwindcss/utilities";
 
-img {
-  max-width: unset;
-}
-
 .container {
   @apply px-8;
 }
 
-@screen sm {
+/* @screen sm {
   .container {
     @apply px-10;
   }
-}
+} */
 
 @screen md {
   .container {
@@ -37,10 +33,14 @@ img {
   }
 }
 
-@screen lg {
+/* @screen lg {
   .container {
     @apply px-16;
   }
+} */
+
+.full-bleed {
+  @extend full-bleed;
 }
 
 code {
@@ -53,4 +53,9 @@ code {
 
 svg:not([class]) {
   @apply inline-block;
+}
+
+
+body {
+  overflow-x: hidden;
 }

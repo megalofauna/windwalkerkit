@@ -13,10 +13,10 @@
 {% endset %}
 
 {% block content %}
-  <main id="main-content" tabindex="-1">
-    <article class="[ post ] [ h-entry ]">
+  <main id="main-content" class="container" tabindex="-1">
+    <article class="content mx-auto max-w-5xl [ h-entry ]">
       {% include "partials/components/intro.njk" %}
-      <div class="[ main-content ] container [ pad-top-900 {{ 'pad-bottom-900' if not site.enableThirdPartyComments }} [ e-content ]">
+      <div class="[ pad-top-900 {{ 'pad-bottom-900' if not site.enableThirdPartyComments }} [ e-content ]">
         {{ content | safe }}
       </div>
       {% if site.enableThirdPartyComments %}
@@ -26,10 +26,10 @@
         </aside>
       {% endif %}
       {% if tags %}
-        <footer class="[ post__footer ] py-8">
-          <div class="container">
+        <footer class="[ post__footer ]">
+          <div>
             <div class="[ nav ] [ box-flex align-center ]">
-              <h2 class="font-base text-600 weight-mid">Filed under</h2>
+              <h2 class="font-base text-600 ">Filed under</h2>
               <ul class="[ nav__list ] flex items-center pl-8 [ p-category ]">
                 {% for item in tags %}
                   <li class="nav__item">

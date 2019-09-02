@@ -11,7 +11,7 @@
 
 /* purgecss start ignore */
 
-.main-content {
+.content {
 
   /* remove top and bottom margin from all elements in post__body */
   * {
@@ -25,7 +25,7 @@
 
 
   /* remove margin-top from initial article heading */
-  :first-child {
+  h2:first-child {
     @apply mt-0;
   }
 
@@ -94,22 +94,12 @@
     @apply mt-1;
   }
 
-  :not(pre) code {
-    @apply font-normal;
-    background-color: var(--inline-code-bg-color);
-    color: var(--inline-code-text-color);
-    font-size: .9em;
-    padding: .125ex .25ch;
-    margin-left: 0.25ch;
-    margin-right: 0.25ch;
-  }
-
   pre {
-    @apply font-normal rounded;
+    @apply font-normal rounded-lg;
   }
 
   pre>code {
-    @apply block p-6 text-base rounded overflow-x-auto;
+    @apply block p-6 text-base rounded-lg overflow-x-auto;
   }
 
   figure,
@@ -118,7 +108,7 @@
   video {
     @extend full-bleed;
     /* See "src/css/extends/full-bleed.css" for source */
-    @apply max-w-full my-10;
+    @apply max-w-6xl;
     /* constrain the effect of the full-bleed extend to 100% of its parent container 
      * to prevent it from bleeding to viewport edges on small screens; 
      */
@@ -169,7 +159,7 @@
     }
 
     h2+* {
-      @apply mt-4;
+      @apply mt-6;
     }
 
     h3+*,
@@ -198,11 +188,21 @@
     pre>code,
     .video-player,
     video {
-      @apply max-w-5xl my-16;
+      @apply my-16;
       /* constrain the effect of the full-bleed extend to a specified max-width */
     }
 
   }
+
+  /* 
+  @screen xl {
+
+    p,
+    ul,
+    ol {
+      @apply text-2xl leading-normal;
+    }
+  } */
 
 
   /* blockquote {

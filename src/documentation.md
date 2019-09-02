@@ -1,6 +1,7 @@
 ---
 layout: layouts/documentation.njk
-title: Getting started with WindWalker
+title: Documentation
+summary: Getting started with WindWalker
 ---
 
 ## TailwindCSS resources
