@@ -1,3 +1,4 @@
+/* purgecss start ignore */
 /* Inter Bold - Full */
 @font-face {
   font-family: 'Inter Bold', sans-serif;
@@ -117,3 +118,5 @@ pre>code {
   }
 
 }
+
+/* purgecss end ignore */
