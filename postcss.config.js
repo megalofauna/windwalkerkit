@@ -19,7 +19,7 @@ module.exports = {
     cssmath,
     ...process.env.NODE_ENV === 'production' ? [
       purgecss({
-        content: ['src/_includes/**/*.njk'],
+        content: ['src/**/*.njk'],
         css: ['src/_includes/assets/css/site.css'],
         extractors: [{
           extractor: class {
