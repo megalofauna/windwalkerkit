@@ -6273,6 +6273,8 @@ code[class*='language-'], pre[class*='language-'] {
   border-color: var(--border-secondary);
 }
 
+/* purgecss start ignore */
+
 .container {
   padding-left: 2rem;
   padding-right: 2rem;
@@ -6312,6 +6314,8 @@ svg:not([class]) {
 body {
   overflow-x: hidden;
 }
+
+/* purgecss end ignore */
 
 @media (min-width: 640px) {
   .sm\:sr-only {
