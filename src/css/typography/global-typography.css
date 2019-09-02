@@ -42,7 +42,6 @@ h4 {
 
 a:not([class]) {
   @apply underline cursor-pointer rounded-sm;
-  padding: theme('spacing.micro') theme('spacing.micro');
   color: var(--link-text);
   background-color: var(--bg-link);
   /* text-decoration-skip-ink: auto; */
