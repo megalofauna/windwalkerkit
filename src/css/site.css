@@ -17,6 +17,7 @@
 
 @import "tailwindcss/utilities";
 
+/* purgecss start ignore */
 .container {
   @apply px-8;
 }
@@ -59,3 +60,5 @@ svg:not([class]) {
 body {
   overflow-x: hidden;
 }
+
+/* purgecss end ignore */
