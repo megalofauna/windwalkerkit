@@ -711,29 +711,25 @@ a:not([class]):hover {
 /* Inter Bold - Full */
 
 @font-face {
-  font-family: 'Inter Bold', sans-serif;
+  font-family: 'Inter Bold';
+
+  src: url('/fonts/inter-bold.woff2') format('woff2'),
+    url('/fonts/inter-bold.woff') format('woff');
+
+  font-weight: normal;
 
   font-style: normal;
-
-  font-weight: 700;
-
-  src: local('Inter Bold'), local('Inter-Bold'),
-    url('/fonts/Inter-Bold.woff2') format('woff2'),
-    url('/fonts/Inter-Bold.woff') format('woff');
 }
 
-/* Inter Regular - Full */
-
 @font-face {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter Regular';
+
+  src: url('/fonts/inter-regular.woff2') format('woff2'),
+    url('/fonts/inter-regular.woff') format('woff');
+
+  font-weight: normal;
 
   font-style: normal;
-
-  font-weight: 400;
-
-  src: local('Inter Regular'), local('Inter-Regular'),
-    url('/fonts/Inter-Regular.woff2') format('woff2'),
-    url('/fonts/Inter-Regular.woff') format('woff');
 }
 
 h1, h3, h4 {
@@ -789,6 +785,7 @@ a:not([class]):hover {
 }
 
 pre>code {
+  max-width: 100%;
   background-color: var(--bg-code-block);
   color: var(--text-code-block);
 }
@@ -848,6 +845,12 @@ pre>code {
 
   h4 {
     font-size: 1.125rem;
+  }
+
+  pre>code {
+    max-width: 72rem;
+    background-color: var(--bg-code-block);
+    color: var(--text-code-block);
   }
 }
 
@@ -979,8 +982,7 @@ pre>code {
   }
 
 .content figure, .content pre>code, .content .video-player, .content video {
-    /* See "src/css/extends/full-bleed.css" for source */
-    max-width: 72rem;
+    /* See src/css/extends/full-bleed.css for source */
     /* constrain the effect of the full-bleed extend to 100% of its parent container 
      * to prevent it from bleeding to viewport edges on small screens; 
      */
@@ -2725,7 +2727,7 @@ code[class*='language-'], pre[class*='language-'] {
 }
 
 .font-sans {
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: Inter Regular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .font-title {
@@ -6276,8 +6278,8 @@ code[class*='language-'], pre[class*='language-'] {
 /* purgecss start ignore */
 
 .container {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 /* @screen sm {
@@ -6288,8 +6290,7 @@ code[class*='language-'], pre[class*='language-'] {
 
 @media (min-width: 768px) {
   .container {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    /* @apply px-12; */
   }
 }
 
@@ -7619,7 +7620,7 @@ body {
   }
 
   .sm\:font-sans {
-    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: Inter Regular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   .sm\:font-title {
@@ -12402,7 +12403,7 @@ body {
   }
 
   .md\:font-sans {
-    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: Inter Regular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   .md\:font-title {
@@ -17185,7 +17186,7 @@ body {
   }
 
   .lg\:font-sans {
-    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: Inter Regular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   .lg\:font-title {

@@ -106,9 +106,8 @@
   pre>code,
   .video-player,
   video {
-    @extend full-bleed;
-    /* See "src/css/extends/full-bleed.css" for source */
-    @apply max-w-6xl;
+
+    /* See src/css/extends/full-bleed.css for source */
     /* constrain the effect of the full-bleed extend to 100% of its parent container 
      * to prevent it from bleeding to viewport edges on small screens; 
      */

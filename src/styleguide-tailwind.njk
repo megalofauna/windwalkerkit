@@ -44,7 +44,7 @@ permalink: /styleguide-tailwind/
           {% for primary in styleguidetailwind.primaries() %}
             <li class="sf-flow">
               <div class="rounded py-16" style="background: {{ primary.value }}"></div>
-              <h3 class="font-base text-500">Primary {{ primary.key }}</h3>
+              <h3 class="font-sans text-500">Primary {{ primary.key }}</h3>
               <dl class="props">
                 <dt class="mt-4">Hex value</dt>
                 <dd class="mt-2">
@@ -74,7 +74,7 @@ permalink: /styleguide-tailwind/
           {% for neutral in styleguidetailwind.neutrals() %}
             <li class="sf-flow">
               <div class="rounded py-16 shadow-lg" style="background: {{ neutral.value }}"></div>
-              <h3 class="font-base text-500">Neutral {{ neutral.key }}</h3>
+              <h3 class="font-sans text-500">Neutral {{ neutral.key }}</h3>
               <dl class="props">
                 <dt class="mt-6">Value</dt>
                 <dd class="mt-2">

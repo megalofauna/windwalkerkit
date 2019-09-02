@@ -6,7 +6,7 @@
       <a href="/" class="block w-auto" {{ 'aria-current=page' if page.url == '/' | safe }}>
         <span class="visually-hidden">{{ 'Back to homepage' if page.url != '/' else 'Homepage' }}</span>
         <span class="inline-block flex items-center" aria-hidden="true">
-          <span class="inline-block w-16 h-16 mr-3">{% include "icons/site-logo.svg" %}</span>
+          <span class="inline-block w-10 h-10 md:w-16 md:h-16 mr-3">{% include "icons/site-logo.svg" %}</span>
           <span class="font-bold text-xl">{{ site.name }}</span>
         </span>
       </a>

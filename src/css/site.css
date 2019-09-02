@@ -19,7 +19,7 @@
 
 /* purgecss start ignore */
 .container {
-  @apply px-8;
+  @apply px-4;
 }
 
 /* @screen sm {
@@ -30,7 +30,7 @@
 
 @screen md {
   .container {
-    @apply px-12;
+    /* @apply px-12; */
   }
 }
 
