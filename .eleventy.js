@@ -5,6 +5,8 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const dateFilter = require('./src/filters/date-filter.js');
 const markdownFilter = require('./src/filters/markdown-filter.js');
 const w3DateFilter = require('./src/filters/w3-date-filter.js');
+const pluginTOC = require('eleventy-plugin-nesting-toc');
+
 
 // Import transforms
 const htmlMinTransform = require('./src/transforms/html-min-transform.js');
@@ -34,6 +36,13 @@ module.exports = function (config) {
   config.addPassthroughCopy('src/admin/previews.js');
   config.addPassthroughCopy('node_modules/nunjucks/browser/nunjucks-slim.js');
 
+  // Shortcodes
+  config.addPairedShortcode("fill", function (content, value) {
+    return `<div class="-ml-${value} -mr-${value}">
+        <div class="w-full px-${value}">${content}</div>
+      </div>`;
+  });
+
   const now = new Date();
 
   // Custom collections
@@ -53,6 +62,33 @@ module.exports = function (config) {
   // Plugins
   config.addPlugin(rssPlugin);
   config.addPlugin(syntaxHighlight);
+  config.addPlugin(pluginTOC, {
+    tags: ['h2']
+  });
+
+  // Markdown
+  const markdownIt = require('markdown-it')
+  const markdownItAnchor = require("markdown-it-anchor");
+  const options = {
+    html: true,
+    breaks: true,
+    linkify: true
+  };
+  const opts = {
+    permalink: true,
+    slugify: function (s) {
+      let newStr = String(s).replace(/New\ in\ v\d+\.\d+\.\d+/, '');
+      newStr = newStr.replace(/⚠️/g, '');
+      newStr = newStr.replace(/[?!]/g, '');
+      return encodeURIComponent(newStr.trim().toLowerCase().replace(/\s+/g, '-'));
+    },
+    permalinkBefore: false,
+    permalinkClass: "direct-link",
+    permalinkSymbol: "",
+    level: [1, 2, 3, 4]
+  };
+
+  config.setLibrary("md", markdownIt(options).use(markdownItAnchor, opts));
 
   return {
     dir: {

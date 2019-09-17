@@ -1,10 +1,11 @@
 ---
 title: A post with code samples
-date: '2019-06-18'
+date: '2019-09-15'
 tags:
   - demo-content
   - code
   - blog
+subHead: This is a subtitle for the post—it will be display at a smaller, lighter font size  
 ---
 The best way to demo a code post is to display a real life post, so check out this one from [andy-bell.design](https://andy-bell.design/wrote/creating-a-full-bleed-css-utility/) about a full bleed CSS utility.
 

@@ -1,7 +1,7 @@
 ---
 layout: layouts/documentation.njk
 title: Documentation
-summary: Getting started with WindWalker
+subHead: Getting started with WindWalker
 ---
 
 ## TailwindCSS resources
@@ -84,3 +84,16 @@ Lea Verou's [Prism](https://prismjs.com/) is a great resource for syntax highlig
 > **NOTE:** If you know you'll never need code syntax highlighting for your project, you can safely remove the `@import 'components/syntax-highlighting` statement from `src/css/site.css` and delete `src/css/components/syntax-highlighting.css` from the project.
 
 ## Project Credits
+## Styling strategies
+## Styling strategies
+## Styling strategies
+## Styling strategies
+## Styling strategies
+## Styling strategies
+## Styling strategies
+## Styling strategies
+## Styling strategies
+## Styling strategies
+## Styling strategies
+## Styling strategies
+## Styling strategies

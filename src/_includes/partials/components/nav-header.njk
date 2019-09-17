@@ -1,0 +1,28 @@
+{% if navigation.items %}
+  <nav class="relative mt-4 md:mt-0 bg-neutral-100 border border-neutral-300 rounded md:bg-transparent md:border-0">
+    <span class="shadow-h-overflow block absolute w-full h-full z-50 pointer-events-none rounded md:hidden"></span>
+    <ul class="flex items-center lg:justify-end overflow-x-auto">
+      {% for item in navigation.items %}
+        {% set relAttribute = '' %}
+        {% set currentAttribute = '' %}
+
+        {% if item.rel %}
+          {% set relAttribute = ' rel="' + item.rel + '"' %}
+        {% endif %}
+
+        {% if page.url == item.url %}
+          {% set currentAttribute = ' aria-current="page"' %}
+        {% endif %}
+
+        {% if loop.first %}
+          <li class="p-3">
+          {% else %}
+            <li class="p-3 pl-4 flex-shrink-0">
+            {% endif %}
+            <a class="font-bold hover:underline focus:bg-focus" href="{{ item.url }}"{{ relAttribute | safe }}{{  currentAttribute | safe }}>{{ item.text }}</a>
+          </li>
+
+        {% endfor %}
+      </ul>
+    </nav>
+  {% endif %}

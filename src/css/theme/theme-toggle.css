@@ -1,0 +1,37 @@
+.theme-toggle {
+  box-shadow: inset 1px 1px 3px rgb(0, 0, 0, .20);
+
+  * {
+    transition: all 250ms cubic-bezier(0, .3, 0, 1);
+  }
+
+  svg {
+    position: absolute;
+    display: block;
+  }
+
+  &.light {
+    background-color: #B9D9E9;
+
+    svg {
+      left: -48px;
+    }
+
+    #half-moon,
+    #outer {
+      fill: theme('colors.primary.200')
+    }
+  }
+
+  &.dark {
+    background-color: #34434B;
+
+    svg {
+      left: 0;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

@@ -13,7 +13,7 @@ permalink: /styleguide-tailwind/
     .swatches {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-      grid-gap: 3rem 1.5rem;
+      grid-gap: 4rem 1.5rem;
       margin-left: 0;
     }
 
@@ -44,7 +44,7 @@ permalink: /styleguide-tailwind/
           {% for primary in styleguidetailwind.primaries() %}
             <li class="sf-flow">
               <div class="rounded py-16" style="background: {{ primary.value }}"></div>
-              <h3 class="font-sans text-500">Primary {{ primary.key }}</h3>
+              <p class="mt-8 font-bold font-sans text-2xl">Primary {{ primary.key }}</hp>
               <dl class="props">
                 <dt class="mt-4">Hex value</dt>
                 <dd class="mt-2">
@@ -74,7 +74,7 @@ permalink: /styleguide-tailwind/
           {% for neutral in styleguidetailwind.neutrals() %}
             <li class="sf-flow">
               <div class="rounded py-16 shadow-lg" style="background: {{ neutral.value }}"></div>
-              <h3 class="font-sans text-500">Neutral {{ neutral.key }}</h3>
+              <p class="mt-8 font-bold font-sans text-2xl">Neutral {{ neutral.key }}</hp>
               <dl class="props">
                 <dt class="mt-6">Value</dt>
                 <dd class="mt-2">

@@ -1,0 +1,171 @@
+/* Style main-content content here for two main reasons:
+ * 1. To account for the fact that some content will be wrapped with element tags 
+ *    dynamically by the front-end, and, thus, may not appear in the layout files that 
+ *    purgcess audits for active elements and classes
+ * 2. To leverage the "*" selector to apply global styles
+*/
+
+/* The following is a special purgecss-specific comment for internal stylesheet whitelisting 
+ *  Details 👉 https://www.purgecss.com/whitelisting
+*/
+
+/* purgecss start ignore */
+
+.content {
+
+  /* remove top and bottom margin from all elements in .content */
+  * {
+    @apply my-0;
+  }
+
+  /* add back bottom margin to all elements in .content */
+  *+* {
+    @apply mt-6;
+  }
+
+
+  /* remove margin-top from initial article heading */
+  h2:first-child {
+    @apply mt-0;
+  }
+
+  /* Set margin-top for various heading scenarios at small viewport sizes */
+  h2 {
+    @apply mt-12;
+  }
+
+  h3 {
+    @apply mt-10;
+  }
+
+  h2+h3 {
+    @apply mt-6;
+  }
+
+  h4 {
+    @apply mt-8;
+  }
+
+
+  h3+h4 {
+    @apply mt-3;
+  }
+
+  h2+*,
+  h3+* {
+    @apply mt-3;
+  }
+
+  h4+* {
+    @apply mt-2;
+  }
+
+  h2 a,
+  h3 a,
+  h4 a {
+    @apply inline-block text-inherit;
+
+    .octothorpe {
+      @apply opacity-0;
+    }
+
+    &:hover,
+    &:focus {
+      .octothorpe {
+        @apply opacity-50;
+      }
+    }
+  }
+
+  h2:hover,
+  h3:hover {
+    a {
+
+      .octothorpe {
+        @apply opacity-25;
+        transition: opacity 150ms cubic-bezier(0, .3, 0, 1);
+
+        &:hover {
+          @apply opacity-75;
+        }
+
+        &:focus {
+          @apply no-underline;
+        }
+
+        &:active {
+          @apply bg-transparent;
+        }
+      }
+    }
+
+  }
+
+
+  p,
+  ul,
+  ol {
+    @apply text-lg leading-normal;
+  }
+
+  ul,
+  ol {
+    @apply list-inside mt-2;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  ul {
+    @apply list-disc;
+
+    &.list-none {
+      @apply list-none pl-0 m-0;
+    }
+  }
+
+  li+li {
+    @apply mt-1;
+  }
+
+  @screen md {
+    *+* {
+      @apply mt-12;
+    }
+
+    h2,
+    h3 {
+      @apply mt-16;
+    }
+  }
+
+  @screen lg {
+
+    h2,
+    h3 {
+      @apply mt-16;
+    }
+
+    h4 {
+      @apply mt-12;
+    }
+
+    h2+* {
+      @apply mt-6;
+    }
+
+    h3+*,
+    h4+* {
+      @apply mt-2;
+    }
+
+    p,
+    ul,
+    ol {
+      @apply text-2xl leading-relaxed;
+    }
+  }
+}
+
+/* purgecss end ignore */

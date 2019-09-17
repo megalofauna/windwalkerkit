@@ -6,21 +6,20 @@
 {% set introSummary = summary %}
 
 {% block content %}
-  <main id="main-content" class="container" tabindex="-1">
-    <article class="max-w-5xl mx-auto [ h-entry ]">
-      {% include "partials/components/intro.njk" %}
-      {% include "partials/components/callout.njk" %}
-      <div class="content [ main-content ] pt-8 md:pt-12 lg:pt-16 {{ 'pb-16 md:pb-24 lg:pb-32' if not site.enableThirdPartyComments }} [ e-content ]">
+  <main id="main-content" class="container px-8" tabindex="-1">
+    {% include "partials/components/intro-post.njk" %}
+    <button type="button" class="nav-open" id="navOpen">navOpen</button>
+    <button type="button" class="nav-close" id="navClose">navClose</button>
+    <article class="relative mt-4 xl:mt-16 mx-auto xl:flex [ h-entry ]">
+      <aside class="relative bg-neutral-1000 xl:bg-transparent xl:block p-4 xl:p-0 w-full xl:mt-1 xl:w-1/6 xl:flex-shrink-0">
+        <div class="sticky top-sticky">
+          {{ content | toc(tags=['h2', 'h3'], wrapperClass='pb-32 overflow-auto h-screen nav-collapse toc xl:flex-col xl:sticky xl:top-sticky') | safe }}
+        </div>
+      </aside>
+      {# {% include "partials/components/callout.njk" %} #}
+      <div class="content measure xl:pl-12 {{ 'pb-16 md:pb-24 lg:pb-32' if not site.enableThirdPartyComments }} [ e-content ]">
         {{ content | safe }}
       </div>
-      {% if site.enableThirdPartyComments %}
-        <hr/>
-        <aside class="">
-          {% include "partials/global/third-party-comments.njk" %}
-        </aside>
-      {% endif %}
     </article>
   </main>
 {% endblock %}
-
-{{ content | safe }}

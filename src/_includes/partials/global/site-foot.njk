@@ -1,22 +1,26 @@
-<footer role="contentinfo" class="bg-footer text-footer pt-32 pb-32 border-t border-primary">
-  <div class="container">
-    <div class="[ site-foot__inner ] md:flex md:justify-between md:items-start">
+<footer role="contentinfo" class="mt-16 lg:mt-24 bg-footer text-footer pt-16 pb-16 border-t border-primary">
+  <div class="container px-8">
+    <div class="[ site-foot__inner ] lg:flex lg:justify-between lg:items-start">
       {% if site.shortDesc %}
         <div>
-          <article class="[ site-foot__details ] [ sf-flow measure-compact ]">
-            <h2 class="font-sans text-600">{{ site.name }}</h2>
-            {{ site.shortDesc | markdownFilter | safe }}
+          <article>
+            <p class="font-bold text-lg">{{ site.name }}</p>
+            <div class="text-sm mt-2 max-w-xs">
+              {{ site.shortDesc | markdownFilter | safe }}
+            </div>
           </article>
         </div>
       {% endif %}
       <div>
-        {% include "partials/components/nav.njk" %}
-        <theme-toggle></theme-toggle>
+        {% include "partials/components/nav-footer.njk" %}
+        <div class="mt-8">
+          <theme-toggle></theme-toggle>
+        </div>
       </div>
     </div>
     {% if site.showThemeCredit %}
-      <p class="[ site-foot__credit ] [ pad-top-900 ]">
-        Powered by the <a href="https://hylia.website" rel="external">Hylia Eleventy Starter Kit v{{ pkg.version }}</a>.
+      <p class="mt-8">
+        Powered by the <a href="https://windwalker.website" rel="external">WindWalker Eleventy Starter Kit v{{ pkg.version }}</a>.
       </p>
     {% endif %}
   </div>

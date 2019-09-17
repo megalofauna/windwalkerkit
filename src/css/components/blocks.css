@@ -1,0 +1,84 @@
+/* Style main-content content here for two main reasons:
+ * 1. To account for the fact that some content will be wrapped with element tags 
+ *    dynamically by the front-end, and, thus, may not appear in the layout files that 
+ *    purgcess audits for active elements and classes
+ * 2. To leverage the "*" selector to apply global styles
+*/
+
+/* The following is a special purgecss-specific comment for internal stylesheet whitelisting 
+ *  Details 👉 https://www.purgecss.com/whitelisting
+*/
+
+/* purgecss start ignore */
+
+
+pre {
+  @apply font-normal rounded-lg;
+}
+
+pre>code {
+  @apply block p-6 text-base rounded-lg overflow-x-auto;
+}
+
+blockquote {
+  @apply -ml-3 my-8 border-l-8 border-blockquote bg-blockquote text-blockquote p-8 italic font-serif rounded shadow-lg;
+}
+
+figure,
+pre>code,
+.video-player,
+video {
+  @apply my-16 rounded;
+}
+
+figure img {
+  @apply relative z-10 rounded;
+}
+
+figcaption {
+  @apply text-sm italic max-w-full my-2 mx-auto;
+}
+
+
+@screen md {
+
+  pre>code {
+    @apply p-6 text-lg;
+  }
+
+  figure,
+  pre>code,
+  .video-player,
+  video {
+    @apply my-20;
+  }
+
+  blockquote {
+    @apply my-10;
+  }
+}
+
+@screen lg {
+  pre>code {
+    @apply bleed-full max-w-5xl;
+  }
+
+  figure,
+  .video-player,
+  video {
+    @apply bleed-full max-w-measure;
+  }
+
+  blockquote {
+    @apply my-12;
+  }
+}
+
+
+figcaption {
+  @apply px-16;
+}
+
+
+
+/* purgecss end ignore */

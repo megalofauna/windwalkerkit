@@ -1,4 +1,28 @@
 
+const ww = {};
+
+// Nav
+ww.nav = function(navWrapper, navSelector) {
+  const wrapper = document.querySelector(navWrapper);
+  const nav = wrapper.querySelector(navSelector);
+  const navOpen = document.querySelector('#navOpen');
+  const navClose = document.querySelector('#navClose');
+  navOpen.addEventListener('click', ()=> {
+    wrapper.classList.remove('hidden');
+    wrapper.classList.add('bg-white', 'overflow-y-auto');
+    nav.classList.add('open');
+    navOpen.classList.add('hidden');
+    navClose.classList.remove('hidden');
+  })
+  navClose.addEventListener('click', ()=> {
+    wrapper.classList.add('hidden');
+    nav.classList.remove('open');
+    navOpen.classList.remove('hidden');
+    navClose.classList.add('hidden');
+  })
+};
+
+// ww.nav('.nav-wrapper', '.nav-collapse');
 
 const styleguideUtils = {
   extractRGB: function( element, numberValues ) {
@@ -35,11 +59,8 @@ const styleguideUtils = {
   extractTextColor: function( element ) {
     return textColor = getComputedStyle(document.querySelector(element)).color
   }
-  // grabVariable: function(element) {
-  //   return document.querySelector(element).style.backgroundColor
-  // }
 }
-const sgu = styleguideUtils
+const sgu = styleguideUtils;
 
 const renderStyleguideValues = function ( element ) {
   return sgu.generateTemplate( element )
@@ -47,5 +68,10 @@ const renderStyleguideValues = function ( element ) {
 
 // console.log(sgu.grabVariable('.mock-header'))
 // renderStyleguideValues('.mock-header')
-renderStyleguideValues('.mock-main')
+const mock = document.querySelector('[class^="mock-"]')
+if (mock) {
+  renderStyleguideValues('.mock-main')
+}
 // renderStyleguideValues('.mock-footer')
+
+

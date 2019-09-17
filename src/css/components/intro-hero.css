@@ -1,0 +1,28 @@
+[data-user-color-scheme="dark"] {
+
+  .site-hero {
+    background-color: theme('colors.neutral.300');
+
+    svg * {
+      transition: all 250ms cubic-bezier(0, .3, 0, 1);
+    }
+  }
+
+  #disc-body,
+  #disc-shadow {
+    fill: white;
+  }
+
+  .panes {
+    display: none;
+  }
+
+  #text {
+    fill: white;
+  }
+
+  #text-shadow {
+    fill: black;
+    fill-opacity: .25;
+  }
+}

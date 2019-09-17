@@ -8,58 +8,86 @@ module.exports = {
     screens: {
       sm: '640px',
       md: '768px',
-      lg: '1024px'
+      lg: '1024px',
+      'xl': '1280px',
+      'xxl': '1400px'
     },
     colors: {
       transparent: 'transparent',
 
-      black: '#111111',
+      black: '#1C2120',
       white: '#fff',
 
+      red: {
+        100: '#AE481E',
+        200: '#C65628',
+        300: '#DE6533',
+        400: '#F6733D',
+        500: '#F8966E',
+        600: '#FAB99E',
+        700: '#FCDCCF',
+      },
       primary: {
-        100: '#F0B429',
-        200: '#F7C948',
-        300: '#FADB5F',
-        400: '#FCE588',
-        500: '#FFF3C4',
-        600: '#FFFBEA'
+        100: '#AE481E',
+        200: '#C65628',
+        300: '#DE6533',
+        400: '#F6733D',
+        500: '#F8966E',
+        600: '#FAB99E',
+        700: '#FCDCCF'
       },
       neutral: {
-        100: '#1C322E',
-        200: '#304743',
-        300: '#40514D',
-        400: '#4D605B',
-        500: '#666C6A',
-        600: '#738881',
-        700: '#8FACA2',
-        800: '#B7C4BF',
+        100: '#252928',
+        200: '#383E3C',
+        300: '#505856',
+        400: '#616B68',
+        500: '#818886',
+        600: '#919C98',
+        700: '#B4BBB9',
+        800: '#D4D8D7',
         900: '#EAEBEB',
-        1000: '#F5F5F5'
+        1000: '#FAFAFA'
+      },
+      support: {
+        'salmon': '#FAAFA1',
+        'baby-blue': '#ABD1F2'
       }
     },
     skin: {
       background: {
         'header': 'var(--bg-header)',
         'body': 'var(--bg-body)',
+        'intro': 'var(--bg-intro)',
         'link': 'var(--bg-link)',
         'link-hover': 'var(--bg-link-hover)',
         'code-inline': 'var(--bg-code-inline)',
         'code-block': 'var(--bg-code-block)',
         'callout': 'var(--bg-callout)',
+        'blockquote': 'var(--bg-blockquote)',
         'footer': 'var(--bg-footer)',
+        'link-focus': 'var(--bg-link-focus)'
       },
       text: {
         'header': 'var(--text-header)',
         'body': 'var(--text-body)',
+        'intro': 'var(--text-intro)',
+        'heading': 'var(--text-heading)',
+        'subheading': 'var(--text-subheading)',
         'link': 'var(--text-link)',
         'link-hover': 'var(--text-link-hover)',
         'code-inline': 'var(--text-code-inline)',
         'code-block': 'var(--text-code-block)',
-        'footer': 'var(--text-footer)'
+        'blockquote': 'var(--text-blockquote)',
+        'footer': 'var(--text-footer)',
+        'link-focus': 'var(--text-link-focus)'
       },
       border: {
         'primary': 'var(--border-primary)',
-        'secondary': 'var(--border-secondary)'
+        'secondary': 'var(--border-secondary)',
+        'blockquote': 'var(--border-blockquote)'
+      },
+      focus: {
+        'button': 'var(--focus-button)'
       }
     },
     container: {
@@ -82,7 +110,7 @@ module.exports = {
         '"Noto Color Emoji"',
       ],
       title: [
-        'Inter Bold',
+        'Inter-Black',
         '-apple-system',
         'BlinkMacSystemFont',
         '"Segoe UI"',
@@ -123,6 +151,8 @@ module.exports = {
       '4xl': '2.25rem',
       '5xl': '3rem',
       '6xl': '4rem',
+      'inherit': 'inherit',
+      'track': '1em'
     },
     opacity: {
       '0': '0',
@@ -150,12 +180,21 @@ module.exports = {
     },
     extend: {
       spacing: {
-        'micro-ch': '0.5ch',
-        'micro-ex': '0.125ex'
+        'micro-ch': '0.25ch',
+        'micro-ex': '0.075ex'
       },
       maxWidth: {
-        '7xl': '80rem',
-        '8xl': '96rem'
+        'measure': '64rem',
+      },
+      boxShadow: {
+        'focus': '0 0 2px 2px #F0B429',
+        'h-overflow': 'inset 16px 0 16px rgba(0,0,0,.5), inset -16px 0 16px rgba(0,0,0,.5)'
+      },
+      zIndex: {
+        'behind': '-1'
+      },
+      inset: {
+        'sticky': '4rem'
       }
     }
   },
@@ -259,6 +298,14 @@ module.exports = {
         }
       })
       addUtilities(borders);
+      const focusStates = _.map(theme('skin.focus'), (value, key) => {
+        return {
+          [`.focus-${key}`]: {
+            boxShadow: `${value}`
+          }
+        }
+      })
+      addUtilities(focusStates, ['focus']);
     },
     function ({
       addComponents

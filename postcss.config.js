@@ -6,21 +6,22 @@ const
   tailwind = require('tailwindcss'),
   purgecss = require('@fullhuman/postcss-purgecss'),
   cssnano = require('cssnano'),
-  extend = require('postcss-extend')
-cssmath = require('math-calc');
+  calc = require('postcss-calc'),
+  extend = require('postcss-extend');
 
 module.exports = {
   plugins: [
     cssimport,
     tailwind,
     extend,
+    calc,
     nested,
     advancedvars,
-    cssmath,
     ...process.env.NODE_ENV === 'production' ? [
       purgecss({
         content: ['src/**/*.njk'],
         css: ['src/_includes/assets/css/site.css'],
+        whitelist: ['js-mode-toggle', 'js-mode-status', 'js-mode-text'],
         extractors: [{
           extractor: class {
             static extract(content) {

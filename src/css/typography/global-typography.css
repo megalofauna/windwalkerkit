@@ -1,31 +1,107 @@
-/* purgecss start ignore */
-/* Inter Bold - Full */
+/* CSS rule-sets in this file are NOT whitelisted with regard to 
+* purgecss; if they are NOT used somewhere inside your .njk templates,
+* purgecss won't be able to audit and include them. Be sure that the CSS 
+* declarations in this file are truly used globally (i.e., outside of 
+* the markup that is generated dynamically at build time by Eleventy)
+* 
+* If you need to declare rule-sets that only appear in 
+* build-generated markup (e.g., post content), declare them inside
+* /src/css/typography/build-typography, where they'll be automatically 
+* whitelisted by virtue of being wrapped in purgecss's custom whitelisting 
+* comments
+*
+* purgecss configuration is managed in /postcss.config.js and only runs
+* during a production build (either locally, via the `npm run production` 
+* command or via during Nelitfy's build process)
+*/
+
+/* Inter Heavy - Western subset */
+@font-face {
+  font-family: 'Inter-Black';
+  src: url('/fonts/inter-black.woff2') format('woff2'),
+    url('/fonts/inter-black.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Inter Bold - Western subset */
 @font-face {
   font-family: 'Inter Bold';
   src: url('/fonts/inter-bold.woff2') format('woff2'),
     url('/fonts/inter-bold.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
 }
 
+/* Inter Regular - Western subset */
 @font-face {
   font-family: 'Inter Regular';
   src: url('/fonts/inter-regular.woff2') format('woff2'),
     url('/fonts/inter-regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
 }
 
+/* Need different weights or an unsubsetted version of the Inter typeface?
+* See here: ♥♥♥ https://rsms.me/inter/ ♥♥♥
+* License information: https://github.com/rsms/inter/blob/master/LICENSE.txt
+*/
+
+/* Prevent full-bleed utility from breaking out of the viewport */
+body {
+  @apply overflow-x-hidden min-h-screen;
+}
+
+main:focus {
+  outline: none;
+}
+
+.skip-link:not(:focus),
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap
+}
+
+.skip-link:focus {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: .8rem 1.25rem 1rem 1.25rem;
+  background-color: var(--color-action-bg);
+  color: var(--color-action-text);
+  line-height: 1;
+  text-decoration: none;
+  font-weight: 700
+}
+
+/* Turn off animation for users who don't wish to view it */
+@media(prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation: none !important;
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important
+  }
+}
+
+/* Global heading and `.container` styles for default, medium, and large screens */
+/* No media query - default */
 h1,
 h3,
 h4 {
-  @apply font-bold leading-none;
+  @apply font-title leading-none;
 }
 
 h1 {
-  @apply text-3xl
+  @apply text-4xl;
 }
 
 h2 {
@@ -40,30 +116,10 @@ h4 {
   @apply text-sm uppercase tracking-wider;
 }
 
-a:not([class]) {
-  @apply underline cursor-pointer rounded-sm;
-  color: var(--link-text);
-  background-color: var(--bg-link);
-  /* text-decoration-skip-ink: auto; */
-
-  &:hover {
-    @apply no-underline;
-    color: var(--text-link-hover);
-    background-color: var(--bg-link-hover);
-  }
-}
-
-:not(pre) code {
-  @apply font-normal bg-code-inline text-code-inline py-micro-ex px-micro-ch rounded border border-primary;
-}
-
-pre>code {
-  @apply max-w-full bg-code-block text-code-block;
-}
-
-@screen sm {
+/* 768px and up */
+@screen md {
   h1 {
-    @apply text-4xl leading-none;
+    @apply text-5xl leading-none;
   }
 
   h2 {
@@ -78,38 +134,23 @@ pre>code {
     @apply text-base;
   }
 
+  /* .container {
+    @apply px-12;
+  } */
 }
 
-/* @screen md {
-  h1 {
-    @apply text-4xl leading-none;
-  }
-
-  h2 {
-    @apply text-3xl;
-  }
-
-  h3 {
-    @apply text-xl;
-  }
-
-  h4 {
-    @apply text-base;
-  }
-
-} */
-
+/* 1024px and up */
 @screen lg {
   h1 {
     @apply text-6xl;
   }
 
   h2 {
-    @apply text-3xl leading-tight;
+    @apply text-4xl leading-tight;
   }
 
   h3 {
-    @apply text-2xl leading-tight;
+    @apply text-3xl leading-tight;
   }
 
   h4 {
@@ -121,4 +162,43 @@ pre>code {
   }
 }
 
-/* purgecss end ignore */
+/* Global link styles */
+a:not([class]) {
+  @apply px-micro-ch py-micro-ex underline cursor-pointer rounded-sm;
+  color: var(--link-text);
+  background-color: var(--bg-link);
+  text-decoration-skip-ink: auto;
+
+  &:hover {
+    @apply no-underline;
+    color: var(--text-link-hover);
+    background-color: var(--bg-link-hover);
+  }
+
+  &:focus {
+    @apply bg-link-focus text-link-focus no-underline outline-none;
+  }
+
+  &:focus:hover {
+    @apply underline;
+  }
+}
+
+a {
+  &:focus {
+    @apply bg-link-focus text-link-focus no-underline outline-none;
+  }
+
+  &:focus:hover {
+    @apply underline;
+  }
+}
+
+/* Global code styles */
+:not(pre) code {
+  @apply font-normal bg-code-inline text-code-inline;
+}
+
+pre>code {
+  @apply max-w-full bg-code-block overflow-x-auto text-code-block border border-neutral-300 shadow-inner;
+}
