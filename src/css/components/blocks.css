@@ -17,18 +17,18 @@ pre {
 }
 
 pre>code {
-  @apply block p-6 text-base rounded-lg overflow-x-auto;
+  @apply block p-6 text-base overflow-x-auto;
 }
 
 blockquote {
-  @apply -ml-3 my-8 border-l-8 border-blockquote bg-blockquote text-blockquote p-8 italic font-serif rounded shadow-lg;
+  @apply -ml-3 my-8 border-l-8 border-blockquote bg-blockquote text-blockquote p-8 italic font-serif shadow-lg;
 }
 
 figure,
 pre>code,
 .video-player,
 video {
-  @apply my-16 rounded;
+  @apply my-16;
 }
 
 figure img {

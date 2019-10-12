@@ -9,8 +9,8 @@ module.exports = {
       sm: '640px',
       md: '768px',
       lg: '1024px',
-      'xl': '1280px',
-      'xxl': '1400px'
+      // 'xl': '1280px',
+      // 'xxl': '1400px'
     },
     colors: {
       transparent: 'transparent',
@@ -28,13 +28,15 @@ module.exports = {
         700: '#FCDCCF',
       },
       primary: {
-        100: '#AE481E',
-        200: '#C65628',
-        300: '#DE6533',
-        400: '#F6733D',
-        500: '#F8966E',
-        600: '#FAB99E',
-        700: '#FCDCCF'
+        100: '#821736',
+        200: '#A1274B',
+        300: '#BF3660',
+        400: '#DE4675',
+        500: '#FC558A',
+        600: '#FD7BA4',
+        700: '#FDA1BE',
+        800: '#FDC7D8',
+        900: '#FDEDF2'
       },
       neutral: {
         100: '#252928',
@@ -50,7 +52,7 @@ module.exports = {
       },
       support: {
         'salmon': '#FAAFA1',
-        'baby-blue': '#ABD1F2'
+        'blue': '#277A91'
       }
     },
     skin: {
@@ -58,6 +60,7 @@ module.exports = {
         'header': 'var(--bg-header)',
         'body': 'var(--bg-body)',
         'intro': 'var(--bg-intro)',
+        'intro-bleed': 'var(--bg-intro-bleed)',
         'link': 'var(--bg-link)',
         'link-hover': 'var(--bg-link-hover)',
         'code-inline': 'var(--bg-code-inline)',
@@ -71,6 +74,7 @@ module.exports = {
         'header': 'var(--text-header)',
         'body': 'var(--text-body)',
         'intro': 'var(--text-intro)',
+        'intro-bleed': 'var(--text-intro-bleed)',
         'heading': 'var(--text-heading)',
         'subheading': 'var(--text-subheading)',
         'link': 'var(--text-link)',
@@ -86,6 +90,9 @@ module.exports = {
         'secondary': 'var(--border-secondary)',
         'blockquote': 'var(--border-blockquote)'
       },
+      svg: {
+        'fill-footer': 'var(--svg-fill-footer)'
+      },
       focus: {
         'button': 'var(--focus-button)'
       }
@@ -95,22 +102,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
-        'Inter Regular',
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
-        'Roboto',
-        '"Helvetica Neue"',
-        'Arial',
-        '"Noto Sans"',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Noto Color Emoji"',
-      ],
-      title: [
-        'Inter-Black',
+        '"Inter"',
         '-apple-system',
         'BlinkMacSystemFont',
         '"Segoe UI"',
@@ -179,22 +171,30 @@ module.exports = {
       '12': '12',
     },
     extend: {
-      spacing: {
-        'micro-ch': '0.25ch',
-        'micro-ex': '0.075ex'
-      },
-      maxWidth: {
-        'measure': '64rem',
-      },
       boxShadow: {
         'focus': '0 0 2px 2px #F0B429',
         'h-overflow': 'inset 16px 0 16px rgba(0,0,0,.5), inset -16px 0 16px rgba(0,0,0,.5)'
       },
-      zIndex: {
-        'behind': '-1'
+      maxWidth: {
+        'measure': '64rem',
       },
       inset: {
         'sticky': '4rem'
+      },
+      spacing: {
+        'micro-ch': '0.25ch',
+        'micro-ex': '0.075ex'
+      },
+      height: {
+        '64': '16rem',
+        '96': '24rem',
+      },
+      width: {
+        '64': '16rem',
+        '96': '24rem',
+      },
+      zIndex: {
+        'behind': '-1'
       }
     }
   },
@@ -306,6 +306,14 @@ module.exports = {
         }
       })
       addUtilities(focusStates, ['focus']);
+      const svgFill = _.map(theme('skin.svg'), (value, key) => {
+        return {
+          [`.svg-${key}`]: {
+            color: `${value}`
+          }
+        }
+      })
+      addUtilities(svgFill);
     },
     function ({
       addComponents

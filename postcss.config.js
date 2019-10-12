@@ -21,7 +21,7 @@ module.exports = {
       purgecss({
         content: ['src/**/*.njk'],
         css: ['src/_includes/assets/css/site.css'],
-        whitelist: ['js-mode-toggle', 'js-mode-status', 'js-mode-text'],
+        whitelist: ['js-mode-toggle', 'js-mode-status', 'js-mode-text', 'rounded-full', 'js-mode-toggle'],
         extractors: [{
           extractor: class {
             static extract(content) {

@@ -13,6 +13,7 @@
 
 @import 'components/intro-hero.css';
 @import 'components/blocks.css';
+@import 'components/generated-toc.css';
 @import 'components/syntax-highlighting';
 
 @import "tailwindcss/utilities";

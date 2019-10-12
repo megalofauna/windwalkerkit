@@ -17,34 +17,34 @@
 
 /* Inter Heavy - Western subset */
 @font-face {
-  font-family: 'Inter-Black';
+  font-family: 'Inter';
   src: url('/fonts/inter-black.woff2') format('woff2'),
     url('/fonts/inter-black.woff') format('woff');
-  font-weight: normal;
+  font-weight: 900;
   font-style: normal;
 }
 
 /* Inter Bold - Western subset */
 @font-face {
-  font-family: 'Inter Bold';
+  font-family: 'Inter';
   src: url('/fonts/inter-bold.woff2') format('woff2'),
     url('/fonts/inter-bold.woff') format('woff');
-  font-weight: normal;
+  font-weight: 700;
   font-style: normal;
 }
 
 /* Inter Regular - Western subset */
 @font-face {
-  font-family: 'Inter Regular';
+  font-family: 'Inter';
   src: url('/fonts/inter-regular.woff2') format('woff2'),
     url('/fonts/inter-regular.woff') format('woff');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 
 /* Need different weights or an unsubsetted version of the Inter typeface?
-* See here: ♥♥♥ https://rsms.me/inter/ ♥♥♥
-* License information: https://github.com/rsms/inter/blob/master/LICENSE.txt
+* @source: ♥♥♥ https://rsms.me/inter/ ♥♥♥
+* @License: https://github.com/rsms/inter/blob/master/LICENSE.txt
 */
 
 /* Prevent full-bleed utility from breaking out of the viewport */
@@ -95,9 +95,13 @@ main:focus {
 /* Global heading and `.container` styles for default, medium, and large screens */
 /* No media query - default */
 h1,
+h2 {
+  @apply font-sans font-black leading-none;
+}
+
 h3,
 h4 {
-  @apply font-title leading-none;
+  @apply font-sans font-bold leading-normal;
 }
 
 h1 {
@@ -164,7 +168,11 @@ h4 {
 
 /* Global link styles */
 a:not([class]) {
-  @apply px-micro-ch py-micro-ex underline cursor-pointer rounded-sm;
+  @apply font-bold;
+}
+
+/* a:not([class]) {
+  @apply font-bold underline cursor-pointer;
   color: var(--link-text);
   background-color: var(--bg-link);
   text-decoration-skip-ink: auto;
@@ -192,7 +200,7 @@ a {
   &:focus:hover {
     @apply underline;
   }
-}
+} */
 
 /* Global code styles */
 :not(pre) code {

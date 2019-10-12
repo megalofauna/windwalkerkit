@@ -1,10 +1,16 @@
 ---
 layout: layouts/documentation.njk
 title: Documentation
-subHead: Getting started with WindWalker
+# subHead: Getting started with WindWalker
+date: '2019-09-18'
+version: 
 ---
 
-## TailwindCSS resources
+## Getting started
+
+### TailwindCSS resources
+
+WindWalker is [Tailwind](https://tailwindcss.com/)-based through and through. If you're already familiar with Tailwind, you've got a leg up and WindWalker should feel fairly familiar. If you've never used Tailwind, it may be useful to check out some resources to get up to speed. 
 
 1. Tailwind screencasts
 2. Tailwind docs
@@ -12,6 +18,9 @@ subHead: Getting started with WindWalker
 
 If you're using VS Code, you'll probably want to install [Tailwind CSS Intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss). It's invaluable. 
 
+### Eleventy resources
+
+ WindWalker's implementation of the [11ty](https://www.11ty.io/)  static site generator should just work out of the box. If you're a tinkerer, though, and wish to extend WindWalker's core functionality, you'll want to familiarize yourself with 11ty. Zach Leatherman, the creator, has written quite a bit of useful [documentation](https://www.11ty.io/docs/). 
 
 WindWalker's CSS is Tailwind-based through and through. While the most common (and probably most preferable) way to use Tailwind is by applying its classes directly in your markup (e.g., `<div class="lg:max-w-4xl"> {{ content }} </div>`), this approach won't always work.
 
@@ -36,7 +45,7 @@ Where WindWalker differs from some other Tailwind projects is that _layout_ styl
 
 Why? Mainly because I wanted WindWalker's colors to be easily and centrally configurable.  
 
-### Site Theming
+### Site Theming 
 
 While this approach works well for WindWalker's needs, feel free to 
 
@@ -84,16 +93,3 @@ Lea Verou's [Prism](https://prismjs.com/) is a great resource for syntax highlig
 > **NOTE:** If you know you'll never need code syntax highlighting for your project, you can safely remove the `@import 'components/syntax-highlighting` statement from `src/css/site.css` and delete `src/css/components/syntax-highlighting.css` from the project.
 
 ## Project Credits
-## Styling strategies
-## Styling strategies
-## Styling strategies
-## Styling strategies
-## Styling strategies
-## Styling strategies
-## Styling strategies
-## Styling strategies
-## Styling strategies
-## Styling strategies
-## Styling strategies
-## Styling strategies
-## Styling strategies

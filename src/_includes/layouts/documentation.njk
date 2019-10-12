@@ -7,19 +7,78 @@
 
 {% block content %}
   <main id="main-content" class="container px-8" tabindex="-1">
-    {% include "partials/components/intro-post.njk" %}
-    <button type="button" class="nav-open" id="navOpen">navOpen</button>
-    <button type="button" class="nav-close" id="navClose">navClose</button>
+    {% include "partials/components/intro-bleed.njk" %}
+    {# <button type="button" class="nav-open" id="navOpen">navOpen</button>
+    <button type="button" class="nav-close" id="navClose">navClose</button> #}
     <article class="relative mt-4 xl:mt-16 mx-auto xl:flex [ h-entry ]">
       <aside class="relative bg-neutral-1000 xl:bg-transparent xl:block p-4 xl:p-0 w-full xl:mt-1 xl:w-1/6 xl:flex-shrink-0">
         <div class="sticky top-sticky">
-          {{ content | toc(tags=['h2', 'h3'], wrapperClass='pb-32 overflow-auto h-screen nav-collapse toc xl:flex-col xl:sticky xl:top-sticky') | safe }}
+          {{ content | toc(tags=['h2', 'h3'], wrapperClass='text-body pb-32 overflow-auto h-screen nav-collapse toc xl:flex-col xl:sticky xl:top-sticky') | safe }}
         </div>
       </aside>
       {# {% include "partials/components/callout.njk" %} #}
-      <div class="content measure xl:pl-12 {{ 'pb-16 md:pb-24 lg:pb-32' if not site.enableThirdPartyComments }} [ e-content ]">
+
+      <div class="content xl:w-5/6 xl:pl-24 {{ 'pb-16 md:pb-24 lg:pb-32' if not site.enableThirdPartyComments }} [ e-content ]">
         {{ content | safe }}
       </div>
     </article>
   </main>
+  <div class="relative bleed-full svg-fill-footer">
+    <svg class="object-cover w-screen" viewBox="0 0 2560 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M864.5 206.426L6 488.449V542.426H2566V340.522L2029.5 496.878L864.5 206.426Z" fill="#FC558A"/>
+      <path d="M864.5 213.426L6 492.092V545.426H2566V345.926L2029.5 500.42L864.5 213.426Z" fill="#DE4675"/>
+      <path d="M864.5 233.426L6 512.092L6 766H2565.5L2566 365.926L2029.5 520.42L864.5 233.426Z" fill="url(#paint0_linear)"/>
+      <path d="M1.38574 455.158L871.031 213.509L2022.67 550.125L2565.3 418.746" stroke="white" stroke-width="5"/>
+      <path d="M7.16754 490.728L863.321 204.935L2030.67 482.234L2565.86 323.286" stroke="#FDA1BE" stroke-width="3"/>
+      <g opacity="0.6" filter="url(#filter0_f)">
+        <path d="M834.5 272L894 245.5L967.21 266L841.063 356.141L848.155 385.396L750 458.501L834.5 272Z" fill="#821736" fill-opacity="0.5"/>
+      </g>
+      <path d="M976.248 206.925L934.748 157.925L1009.25 125.925L976.248 206.925Z" fill="url(#paint1_linear)"/>
+      <path d="M976.248 206.925L828.248 206.925L877.248 89.9252L976.248 206.925Z" fill="url(#paint2_linear)"/>
+      <path d="M732.05 89.6218L877.248 89.925L828.248 206.925L732.05 89.6218Z" fill="url(#paint3_linear)"/>
+      <path d="M976.248 206.927L850.248 297.925L828.248 206.928L976.248 206.927Z" fill="url(#paint4_linear)"/>
+      <path d="M828.248 206.925L759.039 399.426L857.194 326.322L828.248 206.925Z" fill="url(#paint5_linear)"/>
+      <path d="M1044.86 184.425L1009.25 125.925L988.459 176.941L1044.86 184.425Z" fill="url(#paint6_linear)"/>
+      <path d="M873.971 89.9828H877.249L828.492 206.929L873.971 89.9828Z" fill="#FD7BA4"/>
+      <path d="M852.992 295.929L850.287 297.881L828.438 206.879L852.992 295.929Z" fill="#821736"/>
+      <path d="M934.824 157.895L937.172 156.919L976.214 206.908L934.824 157.895Z" fill="#821736"/>
+      <path d="M990.539 177.214L988.465 176.933L1009.25 125.943L990.539 177.214Z" fill="#821736"/>
+      <defs>
+        <filter id="filter0_f" x="705" y="200.5" width="307.21" height="303.001" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+          <feGaussianBlur stdDeviation="22.5" result="effect1_foregroundBlur"/>
+        </filter>
+        <linearGradient id="paint0_linear" x1="1286" y1="233.426" x2="1286" y2="691.5" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#DE4675"/>
+          <stop offset="1" stop-color="#BF3660"/>
+        </linearGradient>
+        <linearGradient id="paint1_linear" x 1="1009.25" y1="125.925" x2="946.703" y2="172.874" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#DE4675"/>
+          <stop offset="1" stop-color="#A1274B"/>
+        </linearGradient>
+        <linearGradient id="paint2_linear" x1="872.748" y1="206.925" x2="871.588" y2="95.4372" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#DE4675"/>
+          <stop offset="1" stop-color="#A1274B"/>
+        </linearGradient>
+        <linearGradient id="paint3_linear" x1="851.748" y1="144.925" x2="732.248" y2="88.425" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#DE4675"/>
+          <stop offset="1" stop-color="#A1274B"/>
+        </linearGradient>
+        <linearGradient id="paint4_linear" x1="850.199" y1="293.28" x2="932.54" y2="222.957" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#DE4675"/>
+          <stop offset="1" stop-color="#A1274B"/>
+        </linearGradient>
+        <linearGradient id="paint5_linear" x1="840.248" y1="275.425" x2="750.879" y2="385.37" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#DE4675"/>
+          <stop offset="1" stop-color="#A1274B"/>
+        </linearGradient>
+        <linearGradient id="paint6_linear" x1="1011.47" y1="179.926" x2="1004.47" y2="126.851" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#DE4675"/>
+          <stop offset="1" stop-color="#A1274B"/>
+        </linearGradient>
+      </defs>
+    </svg>
+
+  </div>
 {% endblock %}

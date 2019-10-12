@@ -1,0 +1,14 @@
+<div class="mt-4 flex items-start text-intro-bleed">
+  <div>
+    <span class="text-xs text-primary-700 block uppercase">Version</span>
+    <span class="mt-1 block text-lg font-bold normal-case">
+      {{ pkg.version }}
+    </span>
+  </div>
+  <time datetime="{{ date | w3DateFilter }}" class="ml-4 pl-4 border-l border-primary-700  dt-published">
+    <span class="text-xs block text-primary-700 uppercase block">Last updated</span>
+    <span class="mt-1 block text-lg font-bold normal-case">
+      {{ date | dateFilter }}
+    </span>
+  </time>
+</div>

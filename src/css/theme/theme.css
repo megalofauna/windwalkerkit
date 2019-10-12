@@ -1,24 +1,27 @@
 /* Default theme - Light */
 :root {
-  --bg-header: theme('colors.transparent');
-  --text-header: theme('colors.neutral.200');
+  --bg-header: theme('colors.white');
+  --text-header: theme('colors.neutral.100');
 
-  --bg-body: theme('colors.neutral.1000');
-  --text-body: theme('colors.neutral.300');
+  --bg-body: theme('colors.white');
+  --text-body: theme('colors.neutral.200');
 
   --bg-intro: theme('colors.transparent');
   --text-intro: theme('colors.neutral.200');
+
+  --bg-intro-bleed: theme('colors.neutral.900');
+  --text-intro-bleed: theme('colors.neutral.100');
 
   --text-heading: theme('colors.neutral.200');
   --text-subheading: theme('colors.neutral.400');
 
   --bg-link: theme('colors.transparent');
-  --text-link: theme('colors.neutral.400');
-  --bg-link-hover: theme('colors.red.100');
-  --text-link-hover: theme('colors.white');
+  --text-link: theme('colors.neutral.100');
+  --bg-link-hover: theme('colors.neutral.900');
+  --text-link-hover: theme('colors.primary.400');
 
   --bg-code-inline: theme('colors.transparent');
-  --text-code-inline: theme('colors.red.100');
+  --text-code-inline: theme('colors.primary.500');
 
   --bg-code-block: theme('colors.neutral.300');
   --text-code-block: theme('colors.white');
@@ -27,9 +30,9 @@
   --text-blockquote: theme('colors.neutral.300');
   --border-blockquote: theme('colors.red.400');
 
-  --bg-footer: theme('colors.neutral.900');
-  --text-footer: theme('colors.neutral.200');
-
+  --bg-footer: theme('colors.primary.300');
+  --text-footer: theme('colors.neutral.900');
+  --svg-fill-footer: theme('colors.primary.300');
   --bg-callout: theme('colors.primary.500');
 
   --focus-button: 0 0 0 2px theme('colors.neutral.800');
@@ -51,11 +54,14 @@
   --bg-code-block: theme('colors.neutral.100');
 
   --bg-code-inline: theme('colors.transparent');
-  --text-code-inline: theme('colors.red.400');
+  --text-code-inline: theme('colors.primary.400');
 
 
-  --bg-intro: theme('colors.red.100');
-  --text-intro: theme('colors.neutral.800');
+  --bg-intro: theme('colors.primary.400');
+  --text-intro: theme('colors.neutral.900');
+
+  --bg-intro-bleed: theme('colors.primary.300');
+  --text-intro-bleed: theme('colors.white');
 
   --text-heading: theme('colors.white');
   --text-subheading: theme('colors.red.800');
@@ -66,12 +72,12 @@
   --text-code-block: theme('colors.neutral.900');
 
 
-  --bg-footer: theme('colors.neutral.100');
+  --bg-footer: theme('colors.primary.300');
   --text-footer: theme('colors.neutral.900');
 
   --bg-blockquote: theme('colors.neutral.300');
   --text-blockquote: theme('colors.neutral.900');
-  --border-blockquote: theme('colors.red.400');
+  --border-blockquote: theme('colors.primary.400');
 
   --focus-button: 0 0 0 2px theme('colors.neutral.500');
 

@@ -39,7 +39,7 @@
   }
 
   h2+h3 {
-    @apply mt-6;
+    @apply mt-8;
   }
 
   h4 {
@@ -163,7 +163,7 @@
     p,
     ul,
     ol {
-      @apply text-2xl leading-relaxed;
+      @apply text-xl leading-relaxed;
     }
   }
 }

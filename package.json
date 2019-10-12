@@ -46,6 +46,7 @@
     "cms:precompile": "make-dir dist/admin && nunjucks-precompile src/_includes > dist/admin/templates.js -i '\\.(njk|css|svg)$'",
     "cms:bundle": "rollup --config",
     "start": "concurrently 'npm run postcss' 'npm run cms:bundle -- --watch' 'chokidar \"src/_includes/**\" -c \"npm run cms:precompile\"' 'npm run serve' 'npm run watch'",
+    "theme": "concurrently 'npm run postcss' 'npm run serve' 'npm run watch' 'npx eleventy --serve'",
     "serve": "cross-env ELEVENTY_ENV=development npx eleventy --serve",
     "production": "npm run postcss:production && npm run cms:precompile && npm run cms:bundle && npx eleventy",
     "postcss": "postcss src/css/site.css --output src/_includes/assets/css/site.css",

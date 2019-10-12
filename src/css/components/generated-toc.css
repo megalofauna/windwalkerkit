@@ -1,0 +1,39 @@
+.toc {
+
+  li {
+    @apply mt-8;
+
+    &:first-child {
+      @apply mt-0;
+    }
+  }
+
+  a {
+    @apply text-lg font-bold no-underline py-2;
+
+    &:hover {
+      @apply ;
+    }
+  }
+
+  ol ol {
+    @apply pl-4 border-l border-primary;
+
+    li {
+      @apply mt-2;
+
+      &:first-child {
+        @apply mt-2;
+      }
+    }
+
+    a {
+      @apply font-normal text-sm;
+
+      &:hover {
+        /* @apply text-neutral-300; */
+      }
+    }
+  }
+
+}
