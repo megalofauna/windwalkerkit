@@ -1,0 +1,29 @@
+{% macro navItem(url, label, listItemClasses, anchorClasses) %}
+  <li class="{{ listItemClasses }}">
+    <a class="{{ anchorClasses }}" href="{{ url }}"{{ relAttribute | safe }}{{  currentAttribute | safe }}>
+      {{ label }}
+    </a>
+  </li>
+{% endmacro %}
+
+{# Button / Button Link #}
+{% macro button(el, level, label, href, miscClasses, buttonType) %}
+  {% if el === a %}
+    <a 
+      class="btn-{{ level }} flex items-center px-6 py-4 rounded whitespace-no-wrap uppercase tracking-wide leading-none font-bold 
+        {% if level == 'primary' %} 
+          bg-neutral-300 text-neutral-900 hover:bg-primary-400 hover:text-white
+        {% elseif level == 'secondary' %}
+          bg-neutral-800 text-ink hover:bg-white hover:text-black
+        {% endif %}
+        {{ miscClasses }}" 
+      href="{{ href }}">{{ label }}
+    </a>
+  {% else %}
+    <button 
+      type="button" 
+      class="{{ level }}"
+      href="{{ url }}">{{ label }}
+    </button>
+  {% endif %}
+{% endmacro %}

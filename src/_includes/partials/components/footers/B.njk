@@ -1,0 +1,45 @@
+{# NOTES:
+🔌 Navigation data source: src/_data/demo.json 👉 ["navigation"]
+🔌 Site metadata source: src/_data/site.json 👉 
+🗑️ Deletable
+#}
+
+<footer id="footer-2" role="contentinfo" class="hidden footer mt-48 bg-footer text-footer py-16">
+  <div class="container px-8">
+    <div class="-ml-8 -mr-8 flex flex-col lg:flex-row lg:justify-between flex-wrap">
+      <div class="mt-12 lg:mt-0 px-8">
+        {% if site.shortDesc %}
+          <article>
+            <p class="font-bold text-lg">{% include "assets/svg/windwalker-logotype.svg" %}</p>
+            <div class="text-base mt-5 max-w-xs">
+              {{ site.shortDesc | markdownFilter | safe }}
+            </div>
+          </article>
+        {% endif %}
+        {# <ul class="mt-4 flex">
+          <li>
+            <a href="https://twitter.com/windwalker_kit" alt="Twitter account">
+              {% include "assets/svg/twitter.svg" %}
+            </a>
+          </li>
+          <li>
+            <a href=""></a>
+          </li>
+        </ul> #}
+        <div class="hidden mt-8">
+          <theme-toggle></theme-toggle>
+        </div>
+      </div>
+      {% include "partials/components/nav-footer.njk" %}
+    </div>
+    {% if site.showThemeCredit %}
+      <div class="mt-8 pt-8 border-t border-primary flex flex-wrap justify-between">
+        <p class="">
+          Powered by <a href="https://windwalker.website" rel="external">Windwalker Kit v{{ pkg.version }}</a>.
+        </p>
+        <p class="mt-3 md:mt-0">License information</p>
+      </div>
+    {% endif %}
+  </div>
+</div>
+</footer>

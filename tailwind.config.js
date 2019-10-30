@@ -9,7 +9,7 @@ module.exports = {
       sm: '640px',
       md: '768px',
       lg: '1024px',
-      // 'xl': '1280px',
+      'xl': '1280px',
       // 'xxl': '1400px'
     },
     colors: {
@@ -76,7 +76,7 @@ module.exports = {
         'intro': 'var(--text-intro)',
         'intro-bleed': 'var(--text-intro-bleed)',
         'heading': 'var(--text-heading)',
-        'subheading': 'var(--text-subheading)',
+        'tint': 'var(--text-tint)',
         'link': 'var(--text-link)',
         'link-hover': 'var(--text-link-hover)',
         'code-inline': 'var(--text-code-inline)',
@@ -98,7 +98,8 @@ module.exports = {
       }
     },
     container: {
-      center: true
+      center: true,
+      padding: '2rem'
     },
     fontFamily: {
       sans: [
@@ -175,23 +176,32 @@ module.exports = {
         'focus': '0 0 2px 2px #F0B429',
         'h-overflow': 'inset 16px 0 16px rgba(0,0,0,.5), inset -16px 0 16px rgba(0,0,0,.5)'
       },
-      maxWidth: {
-        'measure': '64rem',
+      height: {
+        '64': '16rem',
+        '96': '24rem',
+        'screen-50': '50vh'
       },
       inset: {
         'sticky': '4rem'
+      },
+      maxWidth: {
+        'measure': '64rem',
+        '48': '16rem'
+      },
+      minHeight: {
+        'screen-1\/2': '50vh',
+        '64': '16rem',
+        '96': '24rem',
+        '128': '48rem'
       },
       spacing: {
         'micro-ch': '0.25ch',
         'micro-ex': '0.075ex'
       },
-      height: {
-        '64': '16rem',
-        '96': '24rem',
-      },
       width: {
         '64': '16rem',
         '96': '24rem',
+        '128': '32rem'
       },
       zIndex: {
         'behind': '-1'

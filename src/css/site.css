@@ -9,7 +9,7 @@
 @import "theme/theme";
 
 @import "typography/global-typography";
-@import "typography/build-typography";
+/* @import "typography/build-typography"; */
 
 @import 'components/intro-hero.css';
 @import 'components/blocks.css';
@@ -17,3 +17,10 @@
 @import 'components/syntax-highlighting';
 
 @import "tailwindcss/utilities";
+
+.bg-homepage-hero {
+  /* background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(251, 251, 251), rgb(248, 248, 248), rgb(244, 244, 244), rgb(240, 240, 240), rgb(236, 236, 236), rgb(233, 233, 233), rgb(229, 229, 229), rgb(225, 225, 225), rgb(221, 221, 221), rgb(218, 218, 218), rgb(214, 214, 214)); */
+
+  background-image: linear-gradient(to bottom, theme('colors.primary.200') 0%, theme('colors.primary.500') 100%);
+
+}

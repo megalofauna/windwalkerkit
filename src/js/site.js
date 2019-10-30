@@ -2,27 +2,61 @@
 const ww = {};
 
 // Nav
-ww.nav = function(navWrapper, navSelector) {
+ww.nav = function(navWrapper) {
   const wrapper = document.querySelector(navWrapper);
-  const nav = wrapper.querySelector(navSelector);
-  const navOpen = document.querySelector('#navOpen');
-  const navClose = document.querySelector('#navClose');
-  navOpen.addEventListener('click', ()=> {
-    wrapper.classList.remove('hidden');
-    wrapper.classList.add('bg-white', 'overflow-y-auto');
-    nav.classList.add('open');
-    navOpen.classList.add('hidden');
-    navClose.classList.remove('hidden');
-  })
-  navClose.addEventListener('click', ()=> {
-    wrapper.classList.add('hidden');
-    nav.classList.remove('open');
-    navOpen.classList.remove('hidden');
-    navClose.classList.add('hidden');
+  const panel = document.querySelector('.jsOCN-panel');
+  const navToggles = [...document.querySelectorAll('.jsOCN-toggle')];
+  let isOpen = false;
+  function OCNToggle(){
+    if (isOpen) {
+      wrapper.classList.add('hidden');
+      panel.classList.remove('open');
+      isOpen = false;
+    }
+    else {
+      wrapper.classList.remove('hidden');
+      panel.classList.add('open');
+      isOpen = true;
+    }
+  }
+  navToggles.forEach(navToggle => {
+    navToggle.addEventListener('click', ()=> {
+      OCNToggle();
+    })
   })
 };
 
-// ww.nav('.nav-wrapper', '.nav-collapse');
+ww.toggleDemos = function(demoSelector, toggleSelector) {
+  const demos = [...document.querySelectorAll(demoSelector)];
+  const toggles = [...document.querySelectorAll(toggleSelector)];
+
+  function toggleDemo(toggle, demo) {
+    toggle.classList.add('bg-neutral-900')
+    document.querySelector(demo).classList.remove('hidden');
+  }
+  function resetDemo(demos, toggles) {
+    demos.forEach((demo) => {
+      demo.classList.add('hidden');
+    })
+    toggles.forEach((toggle) =>{
+      toggle.classList.remove('bg-neutral-900');
+    })
+  }
+  toggles.forEach(toggle => {
+    toggle.addEventListener('click', (event) => {
+      const activeToggle = event.target;
+      const currentDemo = activeToggle.dataset.target;
+      resetDemo(demos, toggles);
+      toggleDemo(activeToggle, currentDemo);
+    });
+  }); 
+};
+
+ww.toggleDemos('.marketing-section', '.jsMarketingToggle');
+ww.toggleDemos('.footer', '.jsFooterToggle');
+// ww.toggleDemos('.footer');
+
+ww.nav('.jsOCN');
 
 const styleguideUtils = {
   extractRGB: function( element, numberValues ) {

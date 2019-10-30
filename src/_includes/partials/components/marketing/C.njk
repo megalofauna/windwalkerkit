@@ -1,0 +1,37 @@
+{# NOTES:
+🔌 Data Source: src/_data/marketing.json 
+🗑️ Deletable
+#}
+
+<section data-index="3" id="marketing-3" class="hidden marketing-section mt-16 container">
+  <div class="-ml-8 -mr-8 flex flex-wrap">
+    <div class="w-1/2">
+      <span class="block w-128 h-128 rounded-full bg-primary-400 shadow p-20 pt-32 pl-32">
+        <svg class="text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 65"><path d="M50.436 24.616l-8.356-9.68 15-6.32-6.644 16z"/><path d="M50.453 24.62H20.521L30.431.956l20.022 23.662zM1.066.896h28.815l-9.36 23.723L1.067.896z"/><path d="M50.453 24.62L25.368 42.932l-4.404-17.857 29.49-.457zM20.521 24.62L6.524 63.55l19.851-14.784-5.854-24.147zM64.283 20.447L57.08 8.616l-3.797 10.082 11 1.749z"/></svg>
+      </span>
+    </div>
+    <div class="w-1/2">
+      <h2 class="text-body px-8 text-3xl font-bold leading-none">
+        Take flight with Windwalker
+      </h2>
+      <p class="mt-4 px-8 text-xl leading-normal text-tint">
+      WindWalker is a lightweight Eleventy starter kit (forked from Hylia) built with TailwindCSS to help you jumpstart your own blog or website.
+      </p>
+      <div class="mt-8">
+        {% for item in marketing.items %}
+          {% if loop.index0 < 3 %}
+            <article class="flex px-8 py-4 w-full md:w-full">
+              <span class="flex-shrink-0 h-16 w-16 rounded-full bg-neutral-1000 shadow ">
+                <img class="w-full h-auto" src="images/{{ item.imageFileName }}" alt="{{ item.alt }}">
+              </span>
+              <div class="ml-8">
+                <h3 class="text-lg text-body lg:text-2xl">{{ item.title }}</h3>
+                <p class="text-tint mt-2">{{ item.description }}</p>
+              </div>
+            </article>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

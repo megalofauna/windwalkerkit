@@ -208,5 +208,5 @@ a {
 }
 
 pre>code {
-  @apply max-w-full bg-code-block overflow-x-auto text-code-block border border-neutral-300 shadow-inner;
+  @apply max-w-full bg-code-block overflow-x-auto text-code-block border bg-neutral-300 shadow-inner;
 }

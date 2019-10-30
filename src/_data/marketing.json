@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "imageFileName": "eleventy-logo.svg",
+      "title": "Eleventy",
+      "description": "11ty is a simpler static site generator that provides granular control without getting in your way",
+      "alt": "Eleventy logo"
+    },
+    {
+      "imageFileName": "tailwind-logo.svg",
+      "title": "TailwindCSS",
+      "description": "Tailwind CSS is a highly customizable, low-level CSS framework that gives you all you need to build bespoke designs without opinionated styles to fight",
+      "alt": "TailwindCSS logo"
+    },
+    {
+      "imageFileName": "netlify-logo.svg",
+      "title": "Netlify",
+      "description": "Netlify is everything you need to build fast, modern websites: continuous deployment, serverless functions, and so much more.",
+      "alt": "Netlify logo"
+    },
+    {
+      "imageFileName": "ww-logo-sm.svg",
+      "title": "Windwalker",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, earum! Necessitatibus nam quisquam voluptates",
+      "alt": "Windwalker logo"
+    },
+    {
+      "imageFileName": "ww-logo-sm.svg",
+      "title": "Windwalker",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, earum! Necessitatibus nam quisquam voluptates",
+      "alt": "Windwalker logo"
+    },
+    {
+      "imageFileName": "ww-logo-sm.svg",
+      "title": "Windwalker",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, earum! Necessitatibus nam quisquam voluptates",
+      "alt": "Windwalker logo"
+    }
+  ]
+}

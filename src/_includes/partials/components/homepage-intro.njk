@@ -1,0 +1,22 @@
+<div class="mt-16 relative container pb-48 content min-h-screen-1/2 lg:min-h-64  xl:min-h-96">
+  <div class="-ml-8 -mr-8 flex flex-wrap-reverse justify-center md:justify-between items-center">
+    <div class="px-8 mt-8 lg:mt-0 md:w-6/12">
+      <h2 class="text-header text-4xl font-bold leading-none">
+        Take flight with Windwalker
+      </h2>
+      <p class="mt-6 text-xl leading-normal text-header">
+      WindWalker is a lightweight Eleventy starter kit (forked from Hylia) built with TailwindCSS to help you jumpstart your own blog or website.
+      </p>
+      <div class="md:text-left mt-6 md:mt-12 lg:mt-16 flex flex-wrap sm:flex-no-wrap">
+        {% from "partials/macros/nav-item.njk" import button as CTA %}
+        {{ CTA(a, 'primary', 'Documentation', '/documentation/') }}
+        {{ CTA(a, 'secondary', 'Styleguide', '/styleguide/', 'hidden sm:inline-block sm:ml-6') }}
+      </div>
+    </div>
+    <div class="px-8 mt-8 lg:mt-0 w-full md:w-6/12 flex justify-start md:justify-end lg:justify-center xl:justify-end items-center">
+      <span class="block w-48 h-48 md:w-64 md:h-64 xl:w-96 xl:h-96 rounded-full" role="presentation">
+        {% include "icons/windwalker-illustration.svg" %}
+      </span>
+    </div>
+  </div>
+</div>

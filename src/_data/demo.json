@@ -1,0 +1,99 @@
+{
+  "navigation": [
+    {
+      "section": "Group Heading 1",
+      "link": [
+        {
+          "text": "Home",
+          "url": "/",
+          "external": false
+        },
+        {
+          "text": "GitHub",
+          "url": "https://github.com/windowswebdev/windwalker",
+          "external": true
+        },
+        {
+          "text": "Twitter",
+          "url": "https://twitter.com/windowswebdev",
+          "external": true
+        },
+        {
+          "text": "Documentation",
+          "url": "/documentation",
+          "external": false
+        },
+        {
+          "text": "Styleguide",
+          "url": "/styleguide-tailwind",
+          "external": false
+        }
+      ]
+    },
+    {
+      "section": "Group Heading 2",
+      "link": [
+        {
+          "text": "Example Link 1",
+          "url": "#0",
+          "external": false
+        },
+        {
+          "text": "Example Link 2",
+          "url": "#0",
+          "external": false
+        },
+        {
+          "text": "Example Link 3",
+          "url": "#0",
+          "external": false
+        }
+      ]
+    },
+    {
+      "section": "Group Heading 3",
+      "link": [
+        {
+          "text": "Example Link 6",
+          "url": "#0",
+          "external": false
+        },
+        {
+          "text": "Example Link 7",
+          "url": "#0",
+          "external": false
+        },
+        {
+          "text": "Example Link 8",
+          "url": "#0",
+          "external": false
+        },
+        {
+          "text": "Example Link 9",
+          "url": "#0",
+          "external": false
+        }
+      ]
+    },
+    {
+      "section": "Group Heading 4",
+      "link": [
+        {
+          "text": "Example Link 10",
+          "url": "#0",
+          "external": false
+        },
+        {
+          "text": "Example Link 11",
+          "url": "#0",
+          "external": false
+        },
+        {
+          "text": "Example Link 12",
+          "url": "#0",
+          "external": false
+        }
+      ]
+    }
+  ]
+}

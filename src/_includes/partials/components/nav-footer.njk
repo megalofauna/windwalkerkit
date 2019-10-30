@@ -1,29 +1,21 @@
-{% if navigation.items %}
-  <nav class="mt-8 lg:mt-0">
-    <ul class="flex flex-col lg:flex-row">
-      {% for item in navigation.items %}
-        {% set relAttribute = '' %}
-        {% set currentAttribute = '' %}
-
-        {% if item.rel %}
-          {% set relAttribute = ' rel="' + item.rel + '"' %}
-        {% endif %}
-
-        {% if page.url == item.url %}
-          {% set currentAttribute = ' aria-current="page"' %}
-        {% endif %}
-
+{% if demo.navigation %}
+  <nav class="px-8 self-start">
+    <ul class="flex flex-col md:flex-row md:flex-wrap md:justify-between">
+      {% for item in demo.navigation %}
         {% if loop.first %}
-          <li>
-            <a class="font-bold no-underline" href="{{ item.url }}"{{ relAttribute | safe }}{{ currentAttribute | safe }}>{{ item.text }}</a>
+          <li class="text-sm text-footer font-bold uppercase">{{ item.section }}
+          {% else %}
+            <li class="md:ml-12 text-sm text-footer mt-8 md:mt-0 uppercase font-bold">{{ item.section }}
+            {% endif %}
+            <ul class="mt-6 font-normal capitalize">
+              {% for i in range(0, item.link.length) -%}
+                <li class="my-2">
+                  <a class="py-2 text-base text-neutral-400 hover:underline" href="{{ items.link[i].url }}">{{ item.link[i].text }}</a>
+                </li>
+              {% endfor %}
+            </ul>
           </li>
-        {% else %}
-          <li class="mt-3 lg:mt-0 lg:ml-3">
-            <a class="font-bold no-underline" href="{{ item.url }}"{{ relAttribute | safe }}{{  currentAttribute | safe }}>{{ item.text }}</a>
-          </li>
-        {% endif %}
-
-      {% endfor %}
-    </ul>
-  </nav>
-{% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+  {% endif %}

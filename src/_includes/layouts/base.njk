@@ -19,15 +19,24 @@
     <style>
       {% include "assets/css/global.css" %}
       {% include "assets/css/site.css" %}
-      {% include "assets/css/credit-sources.css" %}
     </style>
     {% block head %}{% endblock %}
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
+
   <body class="font-sans text-base leading-tight bg-body text-body">
-    {% include "partials/global/site-head.njk" %}
+    {% if page.url === '/' %}
+
+    {% else %}
+      {% include "partials/global/site-header.njk" %}
+    {% endif %}
     {% block content %}{% endblock content %}
-    {% include "partials/global/site-foot.njk" %}
+    <div class="relative">
+      {% include "partials/components/footers/footer-demo-controls.njk" %}
+      {% include "partials/components/footers/A.njk" %}
+      {% include "partials/components/footers/B.njk" %}
+    </div>
+
     {% block foot %}{% endblock %}
     <script type="module" src="/js/components/theme-toggle.js" async defer></script>
     <script src="/js/site.js" defer></script>

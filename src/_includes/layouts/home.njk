@@ -1,5 +1,6 @@
 {% extends 'layouts/base.njk' %}
 {% set pageType = 'Homepage' %}
+{% set constrainedHeader = true %}
 
 {# Intro content #}
 {% set introHeading = title %}
@@ -16,12 +17,17 @@
 {% endif %}
 
 {% block content %}
-  <main id="main-content" class="container px-8" tabindex="-1">
+  <main id="main-content" tabindex="-1">
     <div>
-      {% include "partials/components/intro.njk" %}
-      {# {% include "partials/components/feature-blocks.njk" %} #}
-      {% include "partials/components/post-list.njk" %}
-      {% include "partials/components/pagination.njk" %}
+      {% include "partials/components/homepage-hero.njk" %}
+      {% if marketing.items %}
+        {% include "partials/components/marketing/marketing-demo-controls.njk" %}
+        {% include "partials/components/marketing/A.njk" %}
+        {% include "partials/components/marketing/B.njk" %}
+        {% include "partials/components/marketing/C.njk" %}
+      {% endif %}
+      {# {% include "partials/components/post-list.njk" %}
+      {% include "partials/components/pagination.njk" %} #}
     </div>
   </main>
 {% endblock %}

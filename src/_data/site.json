@@ -1,7 +1,7 @@
 {
   "showThemeCredit": true,
-  "name": "WindWalker",
-  "shortDesc": "WindWalker is a lightweight Eleventy starter kit (based on Hylia) to help you to create your own blog or personal website.",
+  "name": "Windwalker",
+  "shortDesc": "Windwalker is a robust, configurable Eleventy kit (forked from Hylia) to help your website or blog take flight fast",
   "url": "https://windwalker.website",
   "authorEmail": "christopher.salmon@outlook.com",
   "authorHandle": "@windowswebdev",

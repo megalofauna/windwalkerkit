@@ -1,9 +1,9 @@
 /* Default theme - Light */
 :root {
-  --bg-header: theme('colors.white');
-  --text-header: theme('colors.neutral.100');
+  --bg-header: theme('colors.transparent');
+  --text-header: theme('colors.white');
 
-  --bg-body: theme('colors.white');
+  --bg-body: theme('colors.neutral.1000');
   --text-body: theme('colors.neutral.200');
 
   --bg-intro: theme('colors.transparent');
@@ -13,7 +13,7 @@
   --text-intro-bleed: theme('colors.neutral.100');
 
   --text-heading: theme('colors.neutral.200');
-  --text-subheading: theme('colors.neutral.400');
+  --text-tint: theme('colors.neutral.500');
 
   --bg-link: theme('colors.transparent');
   --text-link: theme('colors.neutral.100');
@@ -30,8 +30,8 @@
   --text-blockquote: theme('colors.neutral.300');
   --border-blockquote: theme('colors.red.400');
 
-  --bg-footer: theme('colors.primary.300');
-  --text-footer: theme('colors.neutral.900');
+  --bg-footer: theme('colors.neutral.900');
+  --text-footer: theme('colors.neutral.200');
   --svg-fill-footer: theme('colors.primary.300');
   --bg-callout: theme('colors.primary.500');
 
